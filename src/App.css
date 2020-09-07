@@ -9,30 +9,71 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 5s linear;
   }
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #fff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: initial;
+  transform: translateY(18%);
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #333;
 }
 
 .App-link {
   color: #61dafb;
 }
 
+p {
+  margin-top: 25px;
+  font-size: 2.2rem;
+}
+
+:root {
+  --first: #eff48e;
+  --second: #d2e603;
+  --third: #3e978b;
+  --forth: #2ec1ac;
+}
+
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  
+  
+  0% {
+    filter: drop-shadow(2px 4px 6px var(--first));
+    fill: var(--first);
+    left: 0px;
+    top: 0px;
+    transform: rotateY(0deg);
   }
-  to {
-    transform: rotate(360deg);
+  25% {
+    filter: drop-shadow(2px 4px 6px var(--second));
+    fill: var(--second);
+    left: 200px;
+    top: 0px;
+  }
+  50% {
+    filter: drop-shadow(2px 4px 6px var(--third));
+    fill: var(--third);
+    left: 200px;
+    top: 200px;
+  }
+  75% {
+    filter: drop-shadow(2px 4px 6px var(--forth));
+    fill: var(--forth);
+    left: 0px;
+    top: 200px;
+  }
+  100% {
+    filter: drop-shadow(2px 4px 6px var(--first));
+    fill: var(--first);
+    left: 0px;
+    top: 0px;
+    transform: rotateY(360deg);
   }
 }
