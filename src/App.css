@@ -36,10 +36,10 @@ p {
 }
 
 :root {
-  --first: #eff48e;
-  --second: #d2e603;
-  --third: #3e978b;
-  --forth: #2ec1ac;
+  --first: #001b48;
+  --second: #004581;
+  --third: #018abd;
+  --forth: #97cbdc;
 }
 
 @keyframes App-logo-spin {
@@ -50,7 +50,7 @@ p {
     fill: var(--first);
     left: 0px;
     top: 0px;
-    transform: rotateY(0deg);
+    transform: rotateY(360deg);
   }
   25% {
     filter: drop-shadow(2px 4px 6px var(--second));
@@ -75,6 +75,6 @@ p {
     fill: var(--first);
     left: 0px;
     top: 0px;
-    transform: rotateY(360deg);
+    transform: rotateY(0deg);
   }
 }
