@@ -66,10 +66,12 @@ const Container = styled.div`
 Container.defaultProps = {
   default: {
     backgroundColor: 'transparent',
+    top: "auto"
   },
   active: {
     backgroundColor: 'rgba(255, 255, 255, 0.95)',
-    boxShadow: '0px 1px 10px 0px rgb(0, 30, 80)'
+    boxShadow: '0px 1px 10px 0px rgb(0, 30, 80)',
+    top: "-100vw"
   }
   
 }

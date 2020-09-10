@@ -6,12 +6,16 @@ const Content = () => {
   return (
     <>
       <Intro 
-        title="Rev Earth"  
-      />
-      <Section></Section>
-      <Section></Section>
-      <Section></Section>
-
+        title="Rev Earth" />
+      <Section
+        title="Section 1"
+        text="Acompañando a la seccion 1" />
+      <Section
+        title="Section 2" 
+        text="Acompañando a la seccion 2" />
+      <Section
+        title="Section 3" 
+        text="Acompañando a la seccion 3" />
     </>
   )
 }
