@@ -10,17 +10,19 @@ const Content = () => {
         title="Rev Earth" />
         <ContainerSections>
           <Section
+            colsA="16"
             title="Section 1"
             text="Acompañando a la seccion 1"
             position="left" />
           <Section
+            colsB="16"
             title="Section 2" 
             text="Acompañando a la seccion 2"
             position="right" />
           <Section
             title="Section 3" 
             text="Acompañando a la seccion 3"
-            position="center" />
+            position="down" />
         </ContainerSections>
     </>
   )
