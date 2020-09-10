@@ -20,13 +20,22 @@ export const Container = styled.div`
   transform: translateZ(0px);
   color: rgba(255, 255, 255, 0.98);
 
-  background-color: ${ props => props.basic ? props.backgroundColor : 'transparent' };
+  background-color: ${ 
+    props => props.headerType === 'common' ? 
+      props.default.backgroundColor :
+      props.active.backgroundColor };
 
   transition: height 0.3s ease-in 0s;
 `;
 
 Container.defaultProps = {
-  backgroundColor: 'mediumseagreen'
+  default: {
+    backgroundColor: 'transparent'
+  },
+  active: {
+    backgroundColor: 'blue'
+  }
+  
 }
 
 // Menu 
@@ -55,7 +64,7 @@ export const ButtonMenu = styled.button`
   text-align: left;
   font-size: 0px;
   color: rgba(255, 255, 255, 0.98);
-  color: ${props => props.basic ? props.default.color : 'rgb(0, 30, 80)' };
+  color: ${props => props.headerType === 'common' ? props.default.color : props.active.color };
 
   border-width: 0px;
   border-style: initial;
@@ -67,7 +76,7 @@ export const ButtonMenu = styled.button`
   
   &:hover,
   &:focus {
-    color: ${props => props.basic ? props.active.color : 'rgb(0, 64, 197)' };
+    color: ${props => props.headerType === 'common' ? props.default.color : props.active.color };
     outline: 0px;
   }
 `;
@@ -77,7 +86,8 @@ ButtonMenu.defaultProps = {
     color: 'rgba(255, 255, 255, 0.98)'
   },
   active: {
-    color: 'rgb(76, 199, 244)'
+    color: 'rgb(76, 199, 244)',
+    color2: 'rgb(0, 30, 80)'
   }
 }
 
@@ -134,12 +144,20 @@ export const GridBoxLine = styled.div`
   &::after {
     content: "";
     height: 2px;
-    background: ${props => props.basic ? props.background : 'rgb(0, 30, 80)' };
+    background-color: ${ 
+    props => props.headerType === 'common' ? 
+      props.default.backgroundColor :
+      props.active.backgroundColor };
   }
 `;
 
 GridBoxLine.defaultProps = {
-  background: 'rgba(255, 255, 255, 0.98)'
+  default: {
+    backgroundColor: 'rgba(255, 255, 255, 0.98)'
+  },
+  active: {
+    backgroundColor: 'rgb(0, 30, 80)'
+  }
 }
 
 export const ContainerLogo = styled.div`
@@ -147,7 +165,7 @@ export const ContainerLogo = styled.div`
   margin: 0 10px;
 
   svg {
-    fill: ${props => props.basic ? props.fill : 'rgb(0, 30, 80)' };
+    fill: ${props => props.headerType === 'common' ? props.default.fill : props.active.fill };
     width: var(--logo-size);
     height: var(--logo-size);
   }
@@ -155,6 +173,11 @@ export const ContainerLogo = styled.div`
 `;
 
 ContainerLogo.defaultProps = {
-  fill: 'rgba(255, 255, 255, 0.98)'
+  default: {
+    fill: 'rgba(255, 255, 255, 0.98)'
+  },
+  active: {
+    fill: 'rgb(0, 30, 80)'
+  }
 }
 

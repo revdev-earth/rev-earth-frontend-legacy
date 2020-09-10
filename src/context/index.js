@@ -4,7 +4,7 @@ const initialState = {
   global: {
     scroll: true,
     menu: {
-      color: "primary"
+      type: "common"
     }
   }
   
