@@ -1,56 +1,56 @@
-import React, { useEffect, useState, useContext } from "react";
-import { ThemeContext } from "styled-components";
+import React, { useState, useContext, memo} from "react"
+import { ThemeContext } from "styled-components"
 import styled from 'styled-components'
-import useScroll from "../../hooks/useScroll";
 import BoxLineComponent from './BoxLine'
 
-const vh = Math.max(
-  document.documentElement.clientHeight || 0,
-  window.innerHeight || 0
-);
+import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 
-const Header = () => {
-  const theme = useContext(ThemeContext);
-  const [isScrolledDown, setIsScrolledDown] = useState(false);
-  const [pasoPrimerBloque, setPasoprimerbloque] = useState(false);
-  const [esperarTiempo, setEsperarTiempo] = useState(false);
+
+
+const Header = memo(() => {
+  const theme = useContext(ThemeContext)
+  const [isScrolledDown, setIsScrolledDown] = useState(false)
+  const [pasoPrimerBloque, setPasoprimerbloque] = useState(false)
+
+  const vh = Math.max(
+    document.documentElement.clientHeight || 0,
+    window.innerHeight || 0
+  )
   const LimitChange = ((vh / 10) * 9)
 
-  useScroll((callbackData) => {
-    const { previousScrollTop, currentScrollTop } = callbackData;
+  useScrollPosition(
+    ({ prevPos, currPos }) => {
+      const isDown = currPos.y < prevPos.y
+      const estaAbajo = Math.abs(currPos.y) > LimitChange
 
-    setPasoprimerbloque(currentScrollTop >= LimitChange);
-
-    setTimeout(() => {
-      setIsScrolledDown(previousScrollTop < currentScrollTop);
-    }, 400);
-  });
-
-  useEffect(() => {
-    setEsperarTiempo(true)
-    setTimeout(() => {
-      setEsperarTiempo(false)
-    }, 1000);
-  }, [pasoPrimerBloque])
+      if (isDown !== isScrolledDown) setIsScrolledDown(isDown)
+      if (estaAbajo !== pasoPrimerBloque) setPasoprimerbloque(estaAbajo)
+    },
+    [isScrolledDown],
+    false,
+    false,
+    300
+  )
 
   return (
     <HeaderContainer>
       <Container
         theme={theme}
-        shouldChangeStyle={pasoPrimerBloque && !isScrolledDown && !esperarTiempo} >
+        shouldChangeStyle={pasoPrimerBloque && !isScrolledDown} >
 
         <BoxLineComponent 
           shouldChangeStyle={!pasoPrimerBloque} />
 
       </Container>
     </HeaderContainer>
-  );
-};
+  )
+})
 
 const HeaderContainer = styled.header`
   position: fixed;
   width: 100vw;
   z-index: 1;
+  overflow: hidden;
 
   & > * {
     pointer-events: auto;

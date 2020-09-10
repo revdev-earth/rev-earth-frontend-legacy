@@ -1,14 +1,13 @@
-import React from 'react';
+import React, { memo } from 'react';
 import styled from 'styled-components'
-import Image1 from '../../static/images/milky.jpg'
 
-
-const Intro = ({title, text}) => {
+const Intro = memo(({ title, text, img, animation = "fade-up" }) => {
+  
   return (
     <Container>
-      <Absolute>
+      <Absolute  data-aos={animation}>
         <ContainerImg>
-          <Img alt="Milky" src={Image1} />
+          <Img alt="Milky" src={img} />
         </ContainerImg>
       </Absolute>
       <Absolute>
@@ -20,11 +19,12 @@ const Intro = ({title, text}) => {
       </Absolute>
     </Container>
   )
-}
+})
 
 const Container = styled.div`
   height: 100vh;
   position: relative;
+  overflow-x: hidden;
 `
 
 const Absolute = styled.div`
