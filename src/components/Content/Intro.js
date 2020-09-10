@@ -23,7 +23,7 @@ const Intro = ({title, text}) => {
 }
 
 const Container = styled.div`
-  height: calc(100vh - 84px);
+  height: 100vh;
   position: relative;
 `
 
@@ -55,7 +55,7 @@ const ContainerText = styled.div`
   flex-direction: column;
   -webkit-box-pack: end;
   justify-content: flex-end;
-  height: calc(100vh - 84px);
+  height: 100vh;
   opacity: 1;
   transition: opacity 0.3s cubic-bezier(0.14, 1.12, 0.67, 0.99) 0.1s, height 0.3s ease-in 0s;
   pointer-events: all;
