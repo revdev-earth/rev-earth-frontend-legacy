@@ -1,13 +1,7 @@
 import React, { createContext, useReducer } from 'react'
 
 const initialState = {
-  global: {
-    scroll: true,
-    menu: {
-      type: "common"
-    }
-  }
-  
+  global: { }
 }
 
 // Create Context

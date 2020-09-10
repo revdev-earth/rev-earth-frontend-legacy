@@ -61,7 +61,6 @@ const Container = styled.div`
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(24, 1fr);
-  ${props => console.log(props)}
 
   @media (max-width: 560px) {
     ${(props) => props.colums && `grid-template-areas: "${props.colums.colsA}""${props.colums.colsB}"`};
