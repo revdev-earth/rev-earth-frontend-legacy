@@ -4,8 +4,8 @@ import styled from 'styled-components'
 const Intro = memo(({ title, text, img, animation = "fade-up" }) => {
   
   return (
-    <Container data-aos={animation}>
-      <Absolute>
+    <Container>
+      <Absolute  data-aos={animation}>
         <ContainerImg>
           <Img alt="Milky" src={img} />
         </ContainerImg>
@@ -24,6 +24,7 @@ const Intro = memo(({ title, text, img, animation = "fade-up" }) => {
 const Container = styled.div`
   height: 100vh;
   position: relative;
+  overflow-x: hidden;
 `
 
 const Absolute = styled.div`

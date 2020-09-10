@@ -51,6 +51,7 @@ const HeaderContainer = styled.header`
   position: fixed;
   width: 100vw;
   z-index: 1;
+  overflow: hidden;
 
   & > * {
     pointer-events: auto;

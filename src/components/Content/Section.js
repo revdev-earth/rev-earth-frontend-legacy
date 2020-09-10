@@ -6,8 +6,8 @@ const Section = memo((props) => {
   const colums = useCols(colsA, colsB, position);
 
   return (
-    <Container position={position} data-aos={animation}>
-      <Grid colums={colums} position={position}>
+    <Container position={position}>
+      <Grid colums={colums} position={position}  data-aos={animation}>
         <AreaA>
           <ContainerImg position={position}>
             <Img alt="Milky" src={img} />
@@ -60,6 +60,7 @@ const useCols = (colsA, colsB, position) => {
 const Container = styled.div`
   display: flex;
   margin: 6.7rem 0 0;
+  overflow-x: hidden;
 
   ${({ position }) => position === "center" && "margin-top: 4rem;"}
 
