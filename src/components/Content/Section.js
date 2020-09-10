@@ -127,7 +127,6 @@ const ContainerText = styled.div`
     @media (max-width: 560px) {
       margin: 0 0 2rem;
     }
-    
 
     @media (max-width: 560px) {
       margin: 0 0 0.25rem;
