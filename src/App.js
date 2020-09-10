@@ -19,7 +19,7 @@ const getLocalTheme = () => {
 
 function App() {
   useEffect(() => {
-    Aos.init({ durantion: 2000 })
+    Aos.init({ durantion: 5000 })
   }, [])
 
   return (
