@@ -5,6 +5,10 @@
   --forth: #97cbdc;
 }
 
+.App {
+  overflow-y: hidden;
+}
+
 @keyframes App-logo-spin {
   0% {
     filter: drop-shadow(2px 4px 6px var(--first));
