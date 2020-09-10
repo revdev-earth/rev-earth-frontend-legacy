@@ -2,9 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import Image1 from "../../static/images/milky.jpg";
 
-const useCols = (colAreaA, colAreaB) => {
+const useCols = (colAreaA, colAreaB, position) => {
+
   let colsA = "";
   let colsB = "";
+  let cols = {}
 
   if (colAreaA !== 12) {
     colsA = "a0 ".repeat(colAreaA);
@@ -21,17 +23,28 @@ const useCols = (colAreaA, colAreaB) => {
     colsB = "b0 ".repeat(12);
   }
 
-  return { colsA, colsB };
+  if (position === "center") {
+    colsA = "a0 ".repeat(24  - 6) 
+    colsB = "b0 ".repeat(24  - 6)
+  }
+
+  return {colsA, colsB, position };
 };
 
 const Section = (props) => {
-  const { colAreaA = 12, colAreaB = 12, title = "", text = "" } = props;
+  const {
+    colAreaA = 12,
+    colAreaB = 12,
+    title = "",
+    text = "",
+    position = "left",
+  } = props;
 
-  const colums = useCols(colAreaA, colAreaB);
+  const colums = useCols(colAreaA, colAreaB, position);
 
   return (
     <Container>
-      <Grid colums={colums}>
+      <Grid colums={colums} position={position}>
         <AreaA>
           <ContainerImg>
             <Img alt="Milky" src={Image1} />
@@ -50,7 +63,7 @@ const Section = (props) => {
 
 const Container = styled.div`
   display: flex;
-  margin: 10rem 0;
+  margin: 10rem 0 0;
 
   @media (max-width: 560px) {
     margin: 5rem 0;
@@ -61,9 +74,25 @@ const Grid = styled.div`
   @media (min-width: 560px) {
     display: grid;
     grid-template-columns: repeat(24, 1fr);
-    ${(props) =>
-      props.colums &&
-      `grid-template-areas: "${props.colums.colsA}${props.colums.colsB}"`};
+
+    ${(props) => {
+      let cols = ""
+      switch (props.colums.position) {
+        case 'left':
+          cols = `grid-template-areas: "${props.colums.colsA}${props.colums.colsB}"`
+          break
+        case 'right':
+          cols = `grid-template-areas: "${props.colums.colsB}${props.colums.colsA}"`
+          break
+        case 'center':
+          cols = `grid-template-areas: ". . . ${props.colums.colsB} . . ." ". . . ${props.colums.colsA} . . ."`
+          break
+        default:
+          cols = `grid-template-areas: "${props.colums.colsA}${props.colums.colsB}"`
+      }
+
+      return cols } 
+    }
   }
 `;
 
@@ -118,7 +147,11 @@ const ContainerText = styled.div`
   transition: all 0.3s cubic-bezier(0.14, 1.12, 0.67, 0.99) 0.1s;
 
   @media (max-width: 560px) {
-    margin-top: 2.5rem;
+    margin: 2.5rem 0 ;
+  }
+
+  @media (min-width: 560px) {
+    margin: 2.5rem 0 ;
   }
 
   h2 {
@@ -128,7 +161,7 @@ const ContainerText = styled.div`
       margin: 0 0 2rem;
     }
 
-    @media (max-width: 560px) {
+    @media (min-width: 560px) {
       margin: 0 0 0.25rem;
     }
   }
