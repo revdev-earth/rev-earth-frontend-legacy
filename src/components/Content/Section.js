@@ -3,13 +3,7 @@ import styled from "styled-components";
 import Image1 from "../../static/images/milky.jpg";
 
 const Section = (props) => {
-  const {
-    colsA,
-    colsB,
-    title = "",
-    text = "",
-    position = "left",
-  } = props;
+  const { colsA, colsB, title = "", text = "", position = "left" } = props;
 
   const colums = useCols(colsA, colsB, position);
 
@@ -37,11 +31,11 @@ const useCols = (colsA, colsB, position) => {
   let b = "";
   let cols = {};
 
-  colsA = Number(colsA)
-  colsB = Number(colsB)
+  colsA = Number(colsA);
+  colsB = Number(colsB);
 
-  if (colsA > 24 ||colsA < 24) colsA = 12
-  if (colsB > 24 || colsB < 24) colsB = 12
+  if (colsA > 24 || colsA < 24) colsA = 12;
+  if (colsB > 24 || colsB < 24) colsB = 12;
 
   if (colsA !== 12) {
     a = "a0 ".repeat(colsA);
@@ -66,17 +60,14 @@ const useCols = (colsA, colsB, position) => {
   return { a, b, position };
 };
 
-
-
 const Container = styled.div`
   display: flex;
   margin: 6.7rem 0 0;
-  
 
-  ${({position}) => position === "center" && "margin-top: 4rem;"}
+  ${({ position }) => position === "center" && "margin-top: 4rem;"}
 
   &:last-child {
-    margin-bottom: 6.7rem;
+    margin-bottom: 4rem;
   }
 
   @media (max-width: 560px) {
@@ -85,10 +76,6 @@ const Container = styled.div`
     &:first-child {
       margin-top: 2.2rem;
     }
-
-    
-
-   
   }
 `;
 
@@ -97,8 +84,8 @@ const Grid = styled.div`
     display: grid;
     grid-template-columns: repeat(24, 1fr);
 
-    ${({colums}) => {
-      const { a , b, position } = colums
+    ${({ colums }) => {
+      const { a, b, position } = colums;
       let cols = "";
       switch (position) {
         case "left":
