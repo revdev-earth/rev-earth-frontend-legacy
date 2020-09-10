@@ -21,19 +21,14 @@ const useCols = (colAreaA, colAreaB) => {
     colsB = "b0 ".repeat(12);
   }
 
-  return {colsA, colsB }
-}
+  return { colsA, colsB };
+};
 
 const Section = (props) => {
-  const { 
-    colAreaA = 12, 
-    colAreaB = 12,
-    title = "",
-    text= ""
-  } = props;
+  const { colAreaA = 12, colAreaB = 12, title = "", text = "" } = props;
 
-  const colums = useCols(colAreaA, colAreaB)
-  
+  const colums = useCols(colAreaA, colAreaB);
+
   return (
     <Container>
       <Grid colums={colums}>
@@ -56,20 +51,20 @@ const Section = (props) => {
 const Container = styled.div`
   display: flex;
   margin: 10rem 0;
+
+  @media (max-width: 560px) {
+    margin: 5rem 0;
+  }
 `;
 
 const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(24, 1fr);
-
-  @media (max-width: 560px) {
-    ${(props) => props.colums && `grid-template-areas: "${props.colums.colsA}""${props.colums.colsB}"`};
-  }
-
   @media (min-width: 560px) {
-    ${(props) => props.colums && `grid-template-areas: "${props.colums.colsA}${props.colums.colsB}"`};
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    ${(props) =>
+      props.colums &&
+      `grid-template-areas: "${props.colums.colsA}${props.colums.colsB}"`};
   }
-  
 `;
 
 const AreaA = styled.div`
@@ -77,8 +72,8 @@ const AreaA = styled.div`
   overflow: visible;
 
   display: flex;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 `;
 
 const AreaB = styled.div`
@@ -86,15 +81,19 @@ const AreaB = styled.div`
   overflow: visible;
 
   display: flex;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
 `;
 
 const ContainerImg = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  margin-left: calc((100vw / 24) * 1);
+
+  @media (max-width: 560px) {
+    margin-left: calc((100vw / 24) * 1);
+    margin-right: calc((100vw / 24) * 1);
+  }
 `;
 
 const Img = styled.img`
@@ -116,12 +115,24 @@ const ContainerText = styled.div`
   margin-left: calc((100vw / 24) * 2);
   margin-right: calc((100vw / 24) * 2);
 
-  transition: opacity 0.3s cubic-bezier(0.14, 1.12, 0.67, 0.99) 0.1s, height 0.3s ease-in 0s;
+  transition: all 0.3s cubic-bezier(0.14, 1.12, 0.67, 0.99) 0.1s;
+
+  @media (max-width: 560px) {
+    margin-top: 2.5rem;
+  }
 
   h2 {
     font-size: 3rem;
-    margin: 0 0 2rem;
+
+    @media (max-width: 560px) {
+      margin: 0 0 2rem;
+    }
+    
+
+    @media (max-width: 560px) {
+      margin: 0 0 0.25rem;
+    }
   }
-`
+`;
 
 export default Section;
