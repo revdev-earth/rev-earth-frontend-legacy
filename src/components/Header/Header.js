@@ -1,30 +1,30 @@
-import React, { useEffect, useState, useContext } from "react";
-import { ThemeContext } from "styled-components";
+import React, { useEffect, useState, useContext, memo} from "react"
+import { ThemeContext } from "styled-components"
 import styled from 'styled-components'
-import useScroll from "../../hooks/useScroll";
+import useScroll from "../../hooks/useScroll"
 import BoxLineComponent from './BoxLine'
 
 const vh = Math.max(
   document.documentElement.clientHeight || 0,
   window.innerHeight || 0
-);
+)
 
-const Header = () => {
-  const theme = useContext(ThemeContext);
-  const [isScrolledDown, setIsScrolledDown] = useState(false);
-  const [pasoPrimerBloque, setPasoprimerbloque] = useState(false);
-  const [esperarTiempo, setEsperarTiempo] = useState(false);
+const Header = memo(() => {
+  const theme = useContext(ThemeContext)
+  const [isScrolledDown, setIsScrolledDown] = useState(false)
+  const [pasoPrimerBloque, setPasoprimerbloque] = useState(false)
+  const [esperarTiempo, setEsperarTiempo] = useState(false)
   const LimitChange = ((vh / 10) * 9)
 
   useScroll((callbackData) => {
-    const { previousScrollTop, currentScrollTop } = callbackData;
+    const { previousScrollTop, currentScrollTop } = callbackData
 
-    setPasoprimerbloque(currentScrollTop >= LimitChange);
+    setPasoprimerbloque(currentScrollTop >= LimitChange)
 
     setTimeout(() => {
-      setIsScrolledDown(previousScrollTop < currentScrollTop);
-    }, 400);
-  });
+      setIsScrolledDown(previousScrollTop < currentScrollTop)
+    }, 400)
+  })
 
   useEffect(() => {
     setEsperarTiempo(true)
@@ -44,8 +44,8 @@ const Header = () => {
 
       </Container>
     </HeaderContainer>
-  );
-};
+  )
+})
 
 const HeaderContainer = styled.header`
   position: fixed;

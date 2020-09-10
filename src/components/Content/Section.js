@@ -1,18 +1,16 @@
-import React from "react";
+import React, { memo} from "react";
 import styled from "styled-components";
-import Image1 from "../../static/images/milky.jpg";
 
-const Section = (props) => {
-  const { colsA, colsB, title = "", text = "", position = "left" } = props;
-
+const Section = memo((props) => {
+  const { colsA, colsB, title = "", text = "", position = "left", animation = "fade", img } = props;
   const colums = useCols(colsA, colsB, position);
 
   return (
-    <Container position={position}>
+    <Container position={position} data-aos={animation}>
       <Grid colums={colums} position={position}>
         <AreaA>
           <ContainerImg position={position}>
-            <Img alt="Milky" src={Image1} />
+            <Img alt="Milky" src={img} />
           </ContainerImg>
         </AreaA>
         <AreaB>
@@ -24,12 +22,11 @@ const Section = (props) => {
       </Grid>
     </Container>
   );
-};
+});
 
 const useCols = (colsA, colsB, position) => {
   let a = "";
   let b = "";
-  let cols = {};
 
   colsA = Number(colsA);
   colsB = Number(colsB);
