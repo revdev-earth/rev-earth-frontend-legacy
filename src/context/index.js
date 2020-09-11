@@ -11,7 +11,6 @@ export const MyContext = createContext();
 const reducer = (state, action) => {
   switch (action.type) {
     case "SET_SCROLL":
-      // debugger
       return {
         global: {...state.global, scroll: action.payload}
       };

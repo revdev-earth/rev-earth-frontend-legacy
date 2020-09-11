@@ -4,27 +4,24 @@ import styled from 'styled-components'
 import BoxLineComponent from './BoxLine'
 
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
-
-
-
 const Header = memo(() => {
   const theme = useContext(ThemeContext)
   const [isScrolledDown, setIsScrolledDown] = useState(false)
-  const [pasoPrimerBloque, setPasoprimerbloque] = useState(false)
+  const [passedLimit, setPassedLimit] = useState(false)
 
   const vh = Math.max(
     document.documentElement.clientHeight || 0,
     window.innerHeight || 0
   )
-  const LimitChange = ((vh / 10) * 9)
 
   useScrollPosition(
     ({ prevPos, currPos }) => {
+      const Limit = ((vh / 10) * 9)
       const isDown = currPos.y < prevPos.y
-      const estaAbajo = Math.abs(currPos.y) > LimitChange
+      const execcedLimit = Math.abs(currPos.y) > Limit
 
       if (isDown !== isScrolledDown) setIsScrolledDown(isDown)
-      if (estaAbajo !== pasoPrimerBloque) setPasoprimerbloque(estaAbajo)
+      if (execcedLimit !== passedLimit) setPassedLimit(execcedLimit)
     },
     [isScrolledDown],
     false,
@@ -36,10 +33,11 @@ const Header = memo(() => {
     <HeaderContainer>
       <Container
         theme={theme}
-        shouldChangeStyle={pasoPrimerBloque && !isScrolledDown} >
+        shouldChangeStyle={passedLimit && !isScrolledDown}
+        passedLimit={passedLimit} >
 
         <BoxLineComponent 
-          shouldChangeStyle={!pasoPrimerBloque} />
+          shouldChangeStyle={!passedLimit} />
 
       </Container>
     </HeaderContainer>
@@ -59,7 +57,9 @@ const HeaderContainer = styled.header`
 
 
 const Container = styled.div`
-  ${ props => !props.shouldChangeStyle ? props.default : props.active };
+  ${ props => props.default};
+  ${ props => props.passedLimit && props.passedLimitStyle};
+  ${ props => props.shouldChangeStyle && props.active };
   transition: all 0.3s ease-in-out 0.3s;
 `;
 
@@ -67,6 +67,9 @@ Container.defaultProps = {
   default: {
     backgroundColor: 'transparent',
     top: "auto"
+  },
+  passedLimitStyle: {
+    backgroundColor:  'rgba(255,255,255,0.5)'
   },
   active: {
     backgroundColor: 'rgba(255, 255, 255, 0.95)',

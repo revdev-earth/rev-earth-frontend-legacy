@@ -1,25 +1,40 @@
-import React, { memo} from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
+import Animation from '../common/Animation'
 
 const Section = memo((props) => {
-  const { colsA, colsB, title = "", text = "", position = "left", animation = "fade", img } = props;
+  const {
+    colsA,
+    colsB,
+    title = "",
+    text = "",
+    position = "left",
+    animation,
+    positionStart,
+    img,
+  } = props;
   const colums = useCols(colsA, colsB, position);
 
   return (
-    <Container position={position}>
-      <Grid colums={colums} position={position}  data-aos={animation}>
-        <AreaA>
-          <ContainerImg position={position}>
-            <Img alt="Milky" src={img} />
-          </ContainerImg>
-        </AreaA>
-        <AreaB>
-          <ContainerText>
-            {title && <h2>{title}</h2>}
-            {text && <p>{text}</p>}
-          </ContainerText>
-        </AreaB>
-      </Grid>
+    <Container position={position} >
+      <Animation animation={animation} positionStart={positionStart}>
+        <Grid
+          colums={colums}
+          position={position}
+        >
+          <AreaA>
+            <ContainerImg position={position}>
+              <Img alt={img.alt} src={img.src} />
+            </ContainerImg>
+          </AreaA>
+          <AreaB>
+            <ContainerText>
+              {title && <h2>{title}</h2>}
+              {text && <p>{text}</p>}
+            </ContainerText>
+          </AreaB>
+        </Grid>
+      </Animation>
     </Container>
   );
 });

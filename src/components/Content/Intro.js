@@ -1,13 +1,19 @@
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
 import styled from 'styled-components'
 
 const Intro = memo(({ title, text, img, animation = "fade-up" }) => {
+  const [classAnimation, setClassAnimation] = useState('')
+
+  setTimeout( () => {
+    // add clas animatie
+    setClassAnimation('animate')
+  }, 10)
   
   return (
-    <Container>
-      <Absolute  data-aos={animation}>
+    <Container className={`${classAnimation}`}>
+      <Absolute>
         <ContainerImg>
-          <Img alt="Milky" src={img} />
+          <Img alt={img.alt} src={img.src} />
         </ContainerImg>
       </Absolute>
       <Absolute>
@@ -25,6 +31,16 @@ const Container = styled.div`
   height: 100vh;
   position: relative;
   overflow-x: hidden;
+  
+  transform: scale(1.2);
+  opacity: 0;
+  transition-property: opacity,transform;
+  transition-duration: .4s;
+
+  &.animate {
+    opacity: 1;
+    transform: translateZ(0) scale(1);
+  }
 `
 
 const Absolute = styled.div`

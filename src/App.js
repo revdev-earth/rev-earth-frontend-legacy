@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-import Aos from 'aos'
+import React from 'react';
 
 import { ThemeProvider } from 'styled-components'
 import { ContextProvider } from './context'
@@ -18,9 +17,6 @@ const getLocalTheme = () => {
 };
 
 function App() {
-  useEffect(() => {
-    Aos.init({ durantion: 5000 })
-  }, [])
 
   return (
     <ThemeProvider theme={getLocalTheme() || {}}>
