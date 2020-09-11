@@ -8,7 +8,6 @@ import Content from './components/Content'
 
 import './css/App.css';
 import 'normalize.css';
-import 'aos/dist/aos.css';
 
 /** Return './.theme.json' || {} */
 const getLocalTheme = () => {
