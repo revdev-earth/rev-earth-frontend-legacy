@@ -16,8 +16,8 @@ const Section = memo((props) => {
   const colums = useCols(colsA, colsB, position);
 
   return (
-    <Animation animation={animation} positionStart={positionStart}>
-      <Container position={position} >
+    <Container position={position} >
+      <Animation animation={animation} positionStart={positionStart}>
         <Grid
           colums={colums}
           position={position}
@@ -34,8 +34,8 @@ const Section = memo((props) => {
             </ContainerText>
           </AreaB>
         </Grid>
-      </Container>
-    </Animation>
+      </Animation>
+    </Container>
   );
 });
 
