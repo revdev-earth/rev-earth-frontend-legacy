@@ -32,6 +32,7 @@ const Content = () => {
             text="Acompañando a la seccion 3"
             position="down"
             animation="fade-up"
+            positionStart="top"
             img={Image1} />
         </ContainerSections>
     </>

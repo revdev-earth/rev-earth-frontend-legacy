@@ -5,8 +5,6 @@ import BoxLineComponent from './BoxLine'
 
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 
-
-
 const Header = memo(() => {
   const theme = useContext(ThemeContext)
   const [isScrolledDown, setIsScrolledDown] = useState(false)
