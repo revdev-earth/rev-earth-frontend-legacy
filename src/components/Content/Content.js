@@ -46,6 +46,7 @@ const Content = () => {
 const ContainerSections = styled.div`
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
 `
 
 export default Content
