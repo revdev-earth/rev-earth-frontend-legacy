@@ -24,7 +24,7 @@ const Section = memo((props) => {
         >
           <AreaA>
             <ContainerImg position={position}>
-              <Img alt="Milky" src={img} />
+              <Img alt={img.alt} src={img.src} />
             </ContainerImg>
           </AreaA>
           <AreaB>

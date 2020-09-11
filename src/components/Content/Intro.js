@@ -11,9 +11,9 @@ const Intro = memo(({ title, text, img, animation = "fade-up" }) => {
   
   return (
     <Container className={`${classAnimation}`}>
-      <Absolute  data-aos={animation}>
+      <Absolute>
         <ContainerImg>
-          <Img alt="Milky" src={img} />
+          <Img alt={img.alt} src={img.src} />
         </ContainerImg>
       </Absolute>
       <Absolute>

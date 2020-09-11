@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const ComponentRef = styled.div`
-  transition-duration: 0.5s;
+  transition-duration: 0.4s;
   transition-delay: 0s;
   pointer-events: none;
   ${ ({animation}) => animation.includes("fade") && animations.fade }

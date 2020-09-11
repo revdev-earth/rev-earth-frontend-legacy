@@ -23,7 +23,7 @@ const Animation = (props) => {
         }
       }
 
-      const psn = ps === "top" ? 3.5 : ps === "bottom" ? 1 : 2.5;
+      const psn = ps === "top" ? 3.5 : ps === "bottom" ? 1 : 2.2;
 
       const positionScrollDown = Math.abs(currPos.y) + vh;
       const limit = dimensions.offsetTop + dimensions.offsetHeight / psn;
