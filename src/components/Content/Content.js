@@ -42,7 +42,7 @@ const Content = () => {
         />
         <Section
           colsB="14"
-          title="Parts of Rev Earth"
+          title="Rev Earth's Parts"
           text="Rev Dev - Rev Store - Rev Trade"
           position="right"
           animation="fade-left"
