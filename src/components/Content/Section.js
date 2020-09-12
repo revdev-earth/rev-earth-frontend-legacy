@@ -183,11 +183,11 @@ const ContainerText = styled.div`
   transition: all 0.3s cubic-bezier(0.14, 1.12, 0.67, 0.99) 0.1s;
 
   @media (max-width: 559px) {
-    margin: 1.75rem 0;
+    margin: 1.75rem calc((100vw / 24) * 2);
   }
 
   @media (min-width: 560px) {
-    margin: 2.5rem calc((100vw / 24) * 1);
+    margin: 2.5rem calc((100vw / 24) * 2);
   }
 
   h2 {
