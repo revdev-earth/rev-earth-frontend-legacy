@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const HeaderMain = styled.header`
   position: fixed;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   pointer-events: none;
   overflow: hidden;
 
@@ -16,20 +16,21 @@ export const HeaderMain = styled.header`
 
 export const Container = styled.div`
   width: 100%;
-  height: calc( 16px + 24px + 12px + 32px );
-  transform: translateZ(0px);
+  height: 7rem;
+  transform: translateZ(0);
   color: rgba(255, 255, 255, 0.98);
 
-  background-color: ${ props => props.basic ? props.backgroundColor : 'transparent' };
+  background-color: ${(props) =>
+    props.basic ? props.backgroundColor : "transparent"};
 
   transition: height 0.3s ease-in 0s;
 `;
 
 Container.defaultProps = {
-  backgroundColor: 'mediumseagreen'
-}
+  backgroundColor: "mediumseagreen",
+};
 
-// Menu 
+// Menu
 
 export const Menu = styled.div`
   display: flex;
@@ -37,8 +38,7 @@ export const Menu = styled.div`
   justify-content: space-between;
   -webkit-box-align: center;
   align-items: center;
-  padding-bottom: 12px;
-  padding-top: 16px;
+  padding: 1rem 0;
 `;
 
 export const ContainerButton = styled.div`
@@ -51,35 +51,35 @@ export const ButtonMenu = styled.button`
   cursor: pointer;
   display: block;
   width: auto;
-  height: 24px;
+  height: 2rem;
   text-align: left;
-  font-size: 0px;
+  font-size: 0;
   color: rgba(255, 255, 255, 0.98);
-  color: ${props => props.basic ? props.default.color : 'rgb(0, 30, 80)' };
+  color: ${(props) => (props.basic ? props.default.color : "rgb(0, 30, 80)")};
 
-  border-width: 0px;
+  border-width: 0;
   border-style: initial;
   border-color: initial;
   border-image: initial;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   background: none;
-  
+
   &:hover,
   &:focus {
-    color: ${props => props.basic ? props.active.color : 'rgb(0, 64, 197)' };
-    outline: 0px;
+    color: ${(props) => (props.basic ? props.active.color : "rgb(0, 64, 197)")};
+    outline: 0;
   }
 `;
 
 ButtonMenu.defaultProps = {
   default: {
-    color: 'rgba(255, 255, 255, 0.98)'
+    color: "rgba(255, 255, 255, 0.98)",
   },
   active: {
-    color: 'rgb(76, 199, 244)'
-  }
-}
+    color: "rgb(76, 199, 244)",
+  },
+};
 
 export const ContainerIcon = styled.div`
   display: inline-block;
@@ -91,7 +91,7 @@ export const ContainerText = styled.div`
   height: 100%;
   box-sizing: border-box;
   padding-top: 1px;
-  padding-left: 10px;
+  padding-left: 1rem;
   max-width: calc(25vw);
   overflow: hidden;
 `;
@@ -101,10 +101,10 @@ export const TextMenu = styled.div`
   color: inherit;
   word-break: inherit;
   font-weight: bold;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: 0.04px;
-  margin: -1.5px 0px 1.5px;
+  font-size: 1em;
+  line-height: 1em;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.15rem;
 `;
 
 // Line
@@ -116,8 +116,8 @@ export const BoxLine = styled.div`
   align-items: center;
   pointer-events: none;
   position: absolute;
-  top: 0px;
-  transform: translateY( calc( 16px + 24px + 12px + 0px - 16px + 1px ) );
+  top: 0;
+  transform: translateY(37px);
   transition: transform 0.3s ease-in 0s;
 `;
 
@@ -126,35 +126,33 @@ export const GridBoxLine = styled.div`
   -webkit-box-align: center;
   align-items: center;
   width: 100%;
-  --logo-size: 32px;
-  --margin-size: 8px;
+  --logo-size: 2rem;
   grid-template-columns: auto max-content auto;
 
   &::before,
   &::after {
     content: "";
-    height: 2px;
-    background: ${props => props.basic ? props.background : 'rgb(0, 30, 80)' };
+    height: 0.3rem;
+    background: ${(props) =>
+      props.basic ? props.background : "rgb(0, 30, 80)"};
   }
 `;
 
 GridBoxLine.defaultProps = {
-  background: 'rgba(255, 255, 255, 0.98)'
-}
+  background: "rgba(255, 255, 255, 0.98)",
+};
 
 export const ContainerLogo = styled.div`
   pointer-events: auto;
-  margin: 0 10px;
+  margin: 0 1rem;
 
   svg {
-    fill: ${props => props.basic ? props.fill : 'rgb(0, 30, 80)' };
+    fill: ${(props) => (props.basic ? props.fill : "rgb(0, 30, 80)")};
     width: var(--logo-size);
     height: var(--logo-size);
   }
-
 `;
 
 ContainerLogo.defaultProps = {
-  fill: 'rgba(255, 255, 255, 0.98)'
-}
-
+  fill: "rgba(255, 255, 255, 0.98)",
+};

@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import styled from "styled-components";
-import Animation from '../common/Animation'
+import Animation from "../common/Animation";
 
 const Section = memo((props) => {
   const {
@@ -16,12 +16,9 @@ const Section = memo((props) => {
   const colums = useCols(colsA, colsB, position);
 
   return (
-    <Container position={position} >
+    <Container position={position}>
       <Animation animation={animation} positionStart={positionStart}>
-        <Grid
-          colums={colums}
-          position={position}
-        >
+        <Grid colums={colums} position={position}>
           <AreaA>
             <ContainerImg position={position}>
               <Img alt={img.alt} src={img.src} />
@@ -52,7 +49,7 @@ const useCols = (colsA, colsB, position = "left") => {
   }
 
   if (Number.isInteger(colsB) && !Number.isInteger(colsA)) {
-    if (position === 'right' ) {
+    if (position === "right") {
       a = "a0 ".repeat(colsB);
       b = "b0 ".repeat(24 - colsB);
     } else {
@@ -63,7 +60,7 @@ const useCols = (colsA, colsB, position = "left") => {
 
   if (colsA > 24 || colsA < 0) colsA = 12;
   if (colsB > 24 || colsB < 0) colsB = 12;
-  
+
   if (colsA === 12 || colsB === 12) {
     a = "a0 ".repeat(12);
     b = "b0 ".repeat(12);
