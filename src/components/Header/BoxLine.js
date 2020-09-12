@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 const BoxLineComponent = ({ shouldChangeStyle }) => (
   <BoxLine className="box-line">
@@ -24,58 +24,53 @@ const BoxLineComponent = ({ shouldChangeStyle }) => (
 );
 
 const BoxLine = styled.div`
-  padding: 20px 0;
+  padding: 2rem 0;
 `;
 
 export const GridBoxLine = styled.div`
   display: grid;
   align-items: center;
   width: 100%;
-  --logo-size: 32px;
-  --margin-size: 8px;
   grid-template-columns: auto max-content auto;
 
   &::before,
   &::after {
     content: "";
-    height: 2px;
-    ${ props => props.shouldChangeStyle ? props.default : props.active };
+    height: 0.2rem;
+    ${(props) => (props.shouldChangeStyle ? props.default : props.active)};
     transition: all 0.3s ease-in-out 0.3s;
   }
 `;
 
-
 GridBoxLine.defaultProps = {
   default: {
-    backgroundColor: 'rgba(255, 255, 255, 0.98)'
+    backgroundColor: "rgba(255, 255, 255, 0.98)",
   },
   active: {
-    backgroundColor: 'rgb(0, 30, 80)',
-    boxShadow: '6px 6px 9px 0 rgba(255,255,255,0.3)'
-  }
-}
-
+    backgroundColor: "rgb(0, 30, 80)",
+    boxShadow: "6px 6px 9px 0 rgba(255,255,255,0.3)",
+  },
+};
 
 export const ContainerLogo = styled.div`
   pointer-events: auto;
-  margin: 0 10px;
+  margin: 0 1rem;
 
   svg {
-    ${props => props.shouldChangeStyle ? props.default : props.active };
-    width: var(--logo-size);
-    height: var(--logo-size);
+    ${(props) => (props.shouldChangeStyle ? props.default : props.active)};
+    width: 2rem;
+    height: 2rem;
     transition: all 0.3s ease-in-out 0.3s;
   }
-
 `;
 
 ContainerLogo.defaultProps = {
   default: {
-    fill: 'rgba(255, 255, 255, 0.98)',
+    fill: "rgba(255, 255, 255, 0.98)",
   },
   active: {
-    fill: 'rgb(0, 30, 80)',
-  }
-}
+    fill: "rgb(0, 30, 80)",
+  },
+};
 
 export default BoxLineComponent;

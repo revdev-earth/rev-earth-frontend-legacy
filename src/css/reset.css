@@ -27,7 +27,7 @@
   --h6-size: var(--h1-size-desktop);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   :root {
     --h1-size: var(--h1-size-mobile);
     --h2-size: var(--h1-size-mobile);

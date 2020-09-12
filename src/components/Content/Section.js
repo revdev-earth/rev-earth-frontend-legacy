@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import styled from "styled-components";
-import Animation from '../common/Animation'
+import Animation from "../common/Animation";
 
 const Section = memo((props) => {
   const {
@@ -8,7 +8,7 @@ const Section = memo((props) => {
     colsB,
     title = "",
     text = "",
-    position = "left",
+    position,
     animation,
     positionStart,
     img,
@@ -16,12 +16,9 @@ const Section = memo((props) => {
   const colums = useCols(colsA, colsB, position);
 
   return (
-    <Container position={position} >
+    <Container position={position}>
       <Animation animation={animation} positionStart={positionStart}>
-        <Grid
-          colums={colums}
-          position={position}
-        >
+        <Grid colums={colums} position={position}>
           <AreaA>
             <ContainerImg position={position}>
               <Img alt={img.alt} src={img.src} />
@@ -39,25 +36,30 @@ const Section = memo((props) => {
   );
 });
 
-const useCols = (colsA, colsB, position) => {
+const useCols = (colsA, colsB, position = "left") => {
   let a = "";
   let b = "";
 
   colsA = Number(colsA);
   colsB = Number(colsB);
 
-  if (colsA > 24 || colsA < 24) colsA = 12;
-  if (colsB > 24 || colsB < 24) colsB = 12;
-
-  if (colsA !== 12) {
+  if (Number.isInteger(colsA)) {
     a = "a0 ".repeat(colsA);
     b = "b0 ".repeat(24 - colsA);
   }
 
-  if (colsB !== 12) {
-    a = "a0 ".repeat(24 - colsB);
-    b = "b0 ".repeat(colsB);
+  if (Number.isInteger(colsB) && !Number.isInteger(colsA)) {
+    if (position === "right") {
+      a = "a0 ".repeat(colsB);
+      b = "b0 ".repeat(24 - colsB);
+    } else {
+      a = "a0 ".repeat(24 - colsB);
+      b = "b0 ".repeat(colsB);
+    }
   }
+
+  if (colsA > 24 || colsA < 0) colsA = 12;
+  if (colsB > 24 || colsB < 0) colsB = 12;
 
   if (colsA === 12 || colsB === 12) {
     a = "a0 ".repeat(12);
@@ -77,13 +79,13 @@ const Container = styled.div`
   margin: 6.7rem 0 0;
   overflow-x: hidden;
 
-  ${({ position }) => position === "center" && "margin-top: 4rem;"}
+  ${({ position }) => (position === "top" || position === "down") && "margin-top: 4rem;"}
 
   &:last-child {
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
   }
 
-  @media (max-width: 560px) {
+  @media (max-width: 559px) {
     margin: 0;
 
     &:first-child {
@@ -144,8 +146,10 @@ const ContainerImg = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
+  max-height: 50vh;
+  overflow: hidden;
 
-  @media (max-width: 560px) {
+  @media (max-width: 559px) {
     margin-left: calc((100vw / 24) * 2);
     margin-right: calc((100vw / 24) * 2);
   }
@@ -178,18 +182,18 @@ const ContainerText = styled.div`
 
   transition: all 0.3s cubic-bezier(0.14, 1.12, 0.67, 0.99) 0.1s;
 
-  @media (max-width: 560px) {
+  @media (max-width: 559px) {
     margin: 1.75rem 0;
   }
 
   @media (min-width: 560px) {
-    margin: 2.5rem 0;
+    margin: 2.5rem calc((100vw / 24) * 1);
   }
 
   h2 {
     font-size: 3rem;
 
-    @media (max-width: 560px) {
+    @media (max-width: 559px) {
       margin: 0 0 0.123rem;
     }
 

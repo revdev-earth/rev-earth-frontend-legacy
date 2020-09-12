@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const ComponentRef = styled.div`
+  width: 100%;
   transition-duration: 0.4s;
   transition-delay: 0s;
   pointer-events: none;

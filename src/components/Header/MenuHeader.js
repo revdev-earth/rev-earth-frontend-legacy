@@ -1,10 +1,9 @@
-import React from 'react';
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 /*  Modo de uso
   <MenuHeader shouldChangeStyle={ shouldChangeStyle === bool } />
 */
-
 
 const MenuHeader = ({ shouldChangeStyle }) => {
   return (
@@ -32,8 +31,7 @@ const MenuHeader = ({ shouldChangeStyle }) => {
   );
 };
 
-
-// Menu 
+// Menu
 
 export const Menu = styled.div`
   display: flex;
@@ -41,8 +39,8 @@ export const Menu = styled.div`
   justify-content: space-between;
   -webkit-box-align: center;
   align-items: center;
-  padding-bottom: 12px;
-  padding-top: 16px;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 `;
 
 export const ContainerButton = styled.div`
@@ -57,35 +55,35 @@ export const ButtonMenu = styled.button`
   width: auto;
   height: 24px;
   text-align: left;
-  font-size: 0px;
-  ${props => props.shouldChangeStyle ? props.default : props.active };
+  font-size: 0;
+  ${(props) => (props.shouldChangeStyle ? props.default : props.active)};
 
-  border-width: 0px;
+  border-width: 0;
   border-style: initial;
   border-color: initial;
   border-image: initial;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   background: none;
-  
+
   transition: all 2.3s ease-in 0s;
-  
+
   &:hover,
   &:focus {
-    ${props => props.shouldChangeStyle ? props.default : props.active };
+    ${(props) => (props.shouldChangeStyle ? props.default : props.active)};
     outline: 0px;
   }
 `;
 
 ButtonMenu.defaultProps = {
   default: {
-    color: 'rgba(255, 255, 255, 0.98)'
+    color: "rgba(255, 255, 255, 0.98)",
   },
   active: {
-    color: 'rgb(76, 199, 244)',
-    color2: 'rgb(0, 30, 80)'
-  }
-}
+    color: "rgb(76, 199, 244)",
+    color2: "rgb(0, 30, 80)",
+  },
+};
 
 export const ContainerIcon = styled.div`
   display: inline-block;
@@ -96,9 +94,8 @@ export const ContainerText = styled.div`
   vertical-align: text-bottom;
   height: 100%;
   box-sizing: border-box;
-  padding-top: 1px;
-  padding-left: 10px;
-  max-width: calc(25vw);
+  padding-left: 1rem;
+  max-width: 25vw;
   overflow: hidden;
 `;
 
@@ -107,11 +104,10 @@ export const TextMenu = styled.div`
   color: inherit;
   word-break: inherit;
   font-weight: bold;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: 0.04px;
-  margin: -1.5px 0px 1.5px;
+  font-size: 1em;
+  line-height: 1em;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.5rem;
 `;
 
-
-export default MenuHeader
+export default MenuHeader;
