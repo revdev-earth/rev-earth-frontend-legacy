@@ -79,7 +79,7 @@ const Container = styled.div`
   margin: 6.7rem 0 0;
   overflow-x: hidden;
 
-  ${({ position }) => position === "top" || position === "down" && "margin-top: 4rem;"}
+  ${({ position }) => (position === "top" || position === "down") && "margin-top: 4rem;"}
 
   &:last-child {
     margin-bottom: 5rem;
