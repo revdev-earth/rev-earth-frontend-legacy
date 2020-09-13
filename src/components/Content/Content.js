@@ -1,12 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-import Section from "./Section";
-import Intro from "./Intro";
-import Image1 from "../../static/images/milky.jpg";
-import Image2 from "../../static/images/meditation.jpg";
-import Image3 from "../../static/images/bamboo.jpg";
-import Image4 from "../../static/images/adventure.jpg";
-
+import React from "react"
+import styled from "styled-components"
+import Section from "./Section"
+import Intro from "./Intro"
+import Image1 from "../../static/images/milky.jpg"
+import Image2 from "../../static/images/meditation.jpg"
+import Image3 from "../../static/images/bamboo.jpg"
+import Image4 from "../../static/images/adventure.jpg"
 
 const imgs = [
   {
@@ -24,7 +23,7 @@ const imgs = [
   {
     src: Image4,
     alt: "adventure",
-  }
+  },
 ]
 
 const Content = () => {
@@ -58,13 +57,13 @@ const Content = () => {
         />
       </ContainerSections>
     </>
-  );
-};
+  )
+}
 
 const ContainerSections = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-`;
+`
 
-export default Content;
+export default Content

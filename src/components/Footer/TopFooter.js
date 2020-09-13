@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from "react"
+import styled from "styled-components"
 
 const TopFooter = ({ blocks }) => {
   return (
@@ -8,8 +8,8 @@ const TopFooter = ({ blocks }) => {
         <Block key={index} links={block.links} title={block.title} />
       ))}
     </Container>
-  );
-};
+  )
+}
 
 const Block = ({ title, links }) => {
   return (
@@ -22,8 +22,8 @@ const Block = ({ title, links }) => {
         ))}
       </List>
     </ContainerBlock>
-  );
-};
+  )
+}
 
 const Container = styled.div`
   @media (min-width: 560px) {
@@ -31,13 +31,13 @@ const Container = styled.div`
     -webkit-box-pack: justify;
     justify-content: space-between;
   }
-`;
+`
 
 const ContainerBlock = styled.div`
   @media (max-width: 559px) {
     margin-bottom: 2.5rem;
   }
-`;
+`
 
 const Title = styled.div`
   font-family: Helvetica, Arial, sans-serif;
@@ -48,20 +48,20 @@ const Title = styled.div`
   word-break: inherit;
   font-weight: bold;
   margin-bottom: 1.5rem;
-`;
+`
 
 const List = styled.ul`
   padding: 0;
   list-style: none;
-`;
+`
 
 const BlockChild = ({ link }) => {
   return (
     <Item>
       <Link href={link.href}>{link.name}</Link>
     </Item>
-  );
-};
+  )
+}
 
 const Item = styled.li`
   font-family: Helvetica, Arial, sans-serif;
@@ -72,7 +72,7 @@ const Item = styled.li`
   line-height: 1em;
   letter-spacing: 0.04em;
   margin: 0 0px 0.11em;
-`;
+`
 
 const Link = styled.a`
   display: block;
@@ -80,6 +80,6 @@ const Link = styled.a`
   padding: 0.4rem 0;
   color: rgb(0, 30, 80);
   text-decoration: none;
-`;
+`
 
-export default TopFooter;
+export default TopFooter

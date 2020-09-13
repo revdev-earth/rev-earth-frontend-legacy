@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import TopFooter from "./TopFooter";
-import BottomFooter from "./BottomFooter";
+import React from "react"
+import styled from "styled-components"
+import TopFooter from "./TopFooter"
+import BottomFooter from "./BottomFooter"
 
 const dataTop = [
   {
@@ -59,7 +59,7 @@ const dataTop = [
       },
     ],
   },
-];
+]
 
 const dataBottom = {
   copy: "© Rev Earth 2020",
@@ -77,7 +77,7 @@ const dataBottom = {
       name: "Politica de cookies",
     },
   ],
-};
+}
 
 const Footer = () => {
   return (
@@ -88,12 +88,12 @@ const Footer = () => {
       </Container>
       <Separator />
     </FooterContainer>
-  );
-};
+  )
+}
 
 const FooterContainer = styled.footer`
   padding: 0 calc((100vw / 24) * 2);
-`;
+`
 
 const Container = styled.div`
   border-top: 2px solid rgb(0, 30, 80);
@@ -104,7 +104,7 @@ const Container = styled.div`
   @media (min-width: 560px) {
     padding: 2rem calc((100vw / 24) * 1);
   }
-`;
+`
 
 const Separator = styled.div`
   @media (max-width: 559px) {
@@ -114,6 +114,6 @@ const Separator = styled.div`
     border-top: 1px solid rgb(223, 228, 232);
     padding-top: 4rem;
   }
-`;
+`
 
-export default Footer;
+export default Footer

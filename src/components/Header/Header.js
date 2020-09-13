@@ -1,5 +1,5 @@
-import React, { useState, useContext, memo} from "react"
-import { ThemeContext } from "styled-components"
+import React, { useState, useContext, memo } from 'react'
+import { ThemeContext } from 'styled-components'
 import styled from 'styled-components'
 import BoxLineComponent from './BoxLine'
 
@@ -9,14 +9,11 @@ const Header = memo(() => {
   const [isScrolledDown, setIsScrolledDown] = useState(false)
   const [passedLimit, setPassedLimit] = useState(false)
 
-  const vh = Math.max(
-    document.documentElement.clientHeight || 0,
-    window.innerHeight || 0
-  )
+  const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
 
   useScrollPosition(
     ({ prevPos, currPos }) => {
-      const Limit = ((vh / 10) * 9)
+      const Limit = (vh / 10) * 9
       const isDown = currPos.y < prevPos.y
       const execcedLimit = Math.abs(currPos.y) > Limit
 
@@ -34,11 +31,9 @@ const Header = memo(() => {
       <Container
         theme={theme}
         shouldChangeStyle={passedLimit && !isScrolledDown}
-        passedLimit={passedLimit} >
-
-        <BoxLineComponent 
-          shouldChangeStyle={!passedLimit} />
-
+        passedLimit={passedLimit}
+      >
+        <BoxLineComponent shouldChangeStyle={!passedLimit} />
       </Container>
     </HeaderContainer>
   )
@@ -53,33 +48,28 @@ const HeaderContainer = styled.header`
   & > * {
     pointer-events: auto;
   }
-`;
-
+`
 
 const Container = styled.div`
-  ${ props => props.default};
-  ${ props => props.passedLimit && props.passedLimitStyle};
-  ${ props => props.shouldChangeStyle && props.active };
+  ${(props) => props.default};
+  ${(props) => props.passedLimit && props.passedLimitStyle};
+  ${(props) => props.shouldChangeStyle && props.active};
   transition: all 0.3s ease-in-out 0.3s;
-`;
+`
 
 Container.defaultProps = {
   default: {
     backgroundColor: 'transparent',
-    top: "auto"
+    top: 'auto',
   },
   passedLimitStyle: {
-    backgroundColor:  'rgba(255,255,255,0.5)'
+    backgroundColor: 'rgba(255,255,255,0.5)',
   },
   active: {
     backgroundColor: 'rgba(255, 255, 255, 0.95)',
     boxShadow: '0px 1px 10px 0px rgb(0, 30, 80)',
-    top: "-100vw"
-  }
-  
+    top: '-100vw',
+  },
 }
 
-
-
-
-export default Header;
+export default Header

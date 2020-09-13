@@ -1,21 +1,19 @@
-import React from "react";
-import styled from "styled-components";
+import React from "react"
+import styled from "styled-components"
 
 const BottomFooter = (props) => {
-  const { copy, links } = props;
+  const { copy, links } = props
   return (
     <Container>
-      <BlockLeft>
-        {copy}
-      </BlockLeft>
+      <BlockLeft>{copy}</BlockLeft>
       <BlockRight>
         {links.map((link, i) => (
           <BlockChild key={i} link={link} />
         ))}
       </BlockRight>
     </Container>
-  );
-};
+  )
+}
 
 const Container = styled.div`
   @media (min-width: 560px) {
@@ -23,7 +21,7 @@ const Container = styled.div`
     -webkit-box-pack: justify;
     justify-content: space-between;
   }
-`;
+`
 
 const BlockLeft = styled.div`
   @media (max-width: 559px) {
@@ -34,22 +32,22 @@ const BlockLeft = styled.div`
     padding-left: 3rem;
     white-space: nowrap;
   }
-`;
+`
 
 const BlockRight = styled.div`
   @media (min-width: 560px) {
     display: flex;
     flex-wrap: wrap;
   }
-`;
+`
 
 const BlockChild = ({ link }) => {
   return (
     <Item>
       <Link href={link.href}>{link.name}</Link>
     </Item>
-  );
-};
+  )
+}
 
 const Item = styled.div`
   font-family: Helvetica, Arial, sans-serif;
@@ -67,14 +65,13 @@ const Item = styled.div`
       margin: 0 1rem;
     }
   }
-
-`;
+`
 
 const Link = styled.a`
   position: relative;
   padding: 0.4rem 0;
   color: rgb(0, 30, 80);
   text-decoration: none;
-`;
+`
 
-export default BottomFooter;
+export default BottomFooter

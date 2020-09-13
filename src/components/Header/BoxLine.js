@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from "react"
+import styled from "styled-components"
 
 const BoxLineComponent = ({ shouldChangeStyle }) => (
   <BoxLine className="box-line">
@@ -21,11 +21,11 @@ const BoxLineComponent = ({ shouldChangeStyle }) => (
       </ContainerLogo>
     </GridBoxLine>
   </BoxLine>
-);
+)
 
 const BoxLine = styled.div`
   padding: 2rem 0;
-`;
+`
 
 export const GridBoxLine = styled.div`
   display: grid;
@@ -40,7 +40,7 @@ export const GridBoxLine = styled.div`
     ${(props) => (props.shouldChangeStyle ? props.default : props.active)};
     transition: all 0.3s ease-in-out 0.3s;
   }
-`;
+`
 
 GridBoxLine.defaultProps = {
   default: {
@@ -50,7 +50,7 @@ GridBoxLine.defaultProps = {
     backgroundColor: "rgb(0, 30, 80)",
     boxShadow: "6px 6px 9px 0 rgba(255,255,255,0.3)",
   },
-};
+}
 
 export const ContainerLogo = styled.div`
   pointer-events: auto;
@@ -62,7 +62,7 @@ export const ContainerLogo = styled.div`
     height: 2rem;
     transition: all 0.3s ease-in-out 0.3s;
   }
-`;
+`
 
 ContainerLogo.defaultProps = {
   default: {
@@ -71,6 +71,6 @@ ContainerLogo.defaultProps = {
   active: {
     fill: "rgb(0, 30, 80)",
   },
-};
+}
 
-export default BoxLineComponent;
+export default BoxLineComponent
