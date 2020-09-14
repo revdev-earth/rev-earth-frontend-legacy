@@ -1,27 +1,27 @@
 {
-	"Intro": {},
-	"section1": {
-		"title": "Ideas that change",
-		"text": "Together we create our world",
-		"img": {
-			"src": "public/images/meditation.jpg",
-			"alt": "meditation"
-		}
-	},
-	"section2": {
-		"title": "Parts of Rev Earth",
-		"text": "Rev Dev - Rev Store - Rev Trade",
-		"img": {
-			"src": "public/images/bamboo.jpg",
-			"alt": "bamboo"
-		}
-	},
-	"section3": {
-		"title": "Conscious world",
-		"text": "Let's be conscious parts of our world",
-		"img": {
-			"src": "public/images/adventure.jpg",
-			"alt": "adventure"
-		}
-	}
+  "Intro": {},
+  "section1": {
+    "title": "Ideas that change",
+    "text": "Together we create our world",
+    "img": {
+      "src": "public/images/meditation.jpg",
+      "alt": "meditation"
+    }
+  },
+  "section2": {
+    "title": "Parts of Rev Earth",
+    "text": "Rev Dev - Rev Store - Rev Trade",
+    "img": {
+      "src": "public/images/bamboo.jpg",
+      "alt": "bamboo"
+    }
+  },
+  "section3": {
+    "title": "Conscious world",
+    "text": "Let's be conscious parts of our world",
+    "img": {
+      "src": "public/images/adventure.jpg",
+      "alt": "adventure"
+    }
+  }
 }

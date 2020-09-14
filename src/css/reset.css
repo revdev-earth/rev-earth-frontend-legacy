@@ -1,63 +1,63 @@
 :root {
-	/* Heading sizes - mobile */
-	/* h4—h6 remain the same size on both mobile & desktop */
+  /* Heading sizes - mobile */
+  /* h4—h6 remain the same size on both mobile & desktop */
 
-	--h00-size-mobile: 40px;
-	--h0-size-mobile: 32px;
-	--h1-size-mobile: 26px;
-	--h2-size-mobile: 22px;
-	--h3-size-mobile: 18px;
+  --h00-size-mobile: 40px;
+  --h0-size-mobile: 32px;
+  --h1-size-mobile: 26px;
+  --h2-size-mobile: 22px;
+  --h3-size-mobile: 18px;
 
-	/* Heading sizes - desktop */
-	--h00-size-desktop: 48px;
-	--h0-size-desktop: 40px;
-	--h1-size-desktop: 32px;
-	--h2-size-desktop: 24px;
-	--h3-size-desktop: 20px;
-	--h4-size-desktop: 16px;
-	--h5-size-desktop: 14px;
-	--h6-size-desktop: 12px;
+  /* Heading sizes - desktop */
+  --h00-size-desktop: 48px;
+  --h0-size-desktop: 40px;
+  --h1-size-desktop: 32px;
+  --h2-size-desktop: 24px;
+  --h3-size-desktop: 20px;
+  --h4-size-desktop: 16px;
+  --h5-size-desktop: 14px;
+  --h6-size-desktop: 12px;
 
-	/* Set Heading sizes */
-	--h1-size: var(--h1-size-desktop);
-	--h2-size: var(--h1-size-desktop);
-	--h3-size: var(--h1-size-desktop);
-	--h4-size: var(--h1-size-desktop);
-	--h5-size: var(--h1-size-desktop);
-	--h6-size: var(--h1-size-desktop);
+  /* Set Heading sizes */
+  --h1-size: var(--h1-size-desktop);
+  --h2-size: var(--h1-size-desktop);
+  --h3-size: var(--h1-size-desktop);
+  --h4-size: var(--h1-size-desktop);
+  --h5-size: var(--h1-size-desktop);
+  --h6-size: var(--h1-size-desktop);
 }
 
 @media (max-width: 768px) {
-	:root {
-		--h1-size: var(--h1-size-mobile);
-		--h2-size: var(--h1-size-mobile);
-		--h3-size: var(--h1-size-mobile);
-		--h4-size: var(--h1-size-mobile);
-		--h5-size: var(--h1-size-mobile);
-		--h6-size: var(--h1-size-mobile);
-	}
+  :root {
+    --h1-size: var(--h1-size-mobile);
+    --h2-size: var(--h1-size-mobile);
+    --h3-size: var(--h1-size-mobile);
+    --h4-size: var(--h1-size-mobile);
+    --h5-size: var(--h1-size-mobile);
+    --h6-size: var(--h1-size-mobile);
+  }
 }
 
 h1 {
-	font-size: var(--h1-size);
+  font-size: var(--h1-size);
 }
 
 h2 {
-	font-size: var(--h2-size);
+  font-size: var(--h2-size);
 }
 
 h3 {
-	font-size: var(--h3-size);
+  font-size: var(--h3-size);
 }
 
 h4 {
-	font-size: var(--h4-size);
+  font-size: var(--h4-size);
 }
 
 h5 {
-	font-size: var(--h5-size);
+  font-size: var(--h5-size);
 }
 
 h6 {
-	font-size: var(--h6-size);
+  font-size: var(--h6-size);
 }

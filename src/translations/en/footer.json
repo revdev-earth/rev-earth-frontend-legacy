@@ -1,76 +1,76 @@
 {
-	"dataTop": [
-		{
-			"title": "Organization",
-			"links": [
-				{
-					"href": "/",
-					"name": "Homepage"
-				},
-				{
-					"href": "/",
-					"name": "Rev Dev"
-				},
-				{
-					"href": "/",
-					"name": "Rev Earth Group"
-				},
-				{
-					"href": "/",
-					"name": "Contact us"
-				}
-			]
-		},
-		{
-			"title": "Ideas",
-			"links": [
-				{
-					"href": "/",
-					"name": "Ideas"
-				}
-			]
-		},
-		{
-			"title": "Social Media",
-			"links": [
-				{
-					"href": "/",
-					"name": "Facebook"
-				},
-				{
-					"href": "/",
-					"name": "Instagram"
-				},
-				{
-					"href": "/",
-					"name": "Twitter"
-				},
-				{
-					"href": "/",
-					"name": "Linkedin"
-				},
-				{
-					"href": "/",
-					"name": "Youtube"
-				}
-			]
-		}
-	],
-	"dataBottom": {
-		"copy": "© Rev Earth 2020",
-		"links": [
-			{
-				"href": "/",
-				"name": "Privacy Policy"
-			},
-			{
-				"href": "/",
-				"name": "Terms and Conditions"
-			},
-			{
-				"href": "/",
-				"name": "Cookies policy"
-			}
-		]
-	}
+  "dataTop": [
+    {
+      "title": "Organization",
+      "links": [
+        {
+          "href": "/",
+          "name": "Homepage"
+        },
+        {
+          "href": "/",
+          "name": "Rev Dev"
+        },
+        {
+          "href": "/",
+          "name": "Rev Earth Group"
+        },
+        {
+          "href": "/",
+          "name": "Contact us"
+        }
+      ]
+    },
+    {
+      "title": "Ideas",
+      "links": [
+        {
+          "href": "/",
+          "name": "Ideas"
+        }
+      ]
+    },
+    {
+      "title": "Social Media",
+      "links": [
+        {
+          "href": "/",
+          "name": "Facebook"
+        },
+        {
+          "href": "/",
+          "name": "Instagram"
+        },
+        {
+          "href": "/",
+          "name": "Twitter"
+        },
+        {
+          "href": "/",
+          "name": "Linkedin"
+        },
+        {
+          "href": "/",
+          "name": "Youtube"
+        }
+      ]
+    }
+  ],
+  "dataBottom": {
+    "copy": "© Rev Earth 2020",
+    "links": [
+      {
+        "href": "/",
+        "name": "Privacy Policy"
+      },
+      {
+        "href": "/",
+        "name": "Terms and Conditions"
+      },
+      {
+        "href": "/",
+        "name": "Cookies policy"
+      }
+    ]
+  }
 }

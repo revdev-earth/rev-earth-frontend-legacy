@@ -14,26 +14,26 @@ import 'normalize.css'
 
 /** Return './.theme.json' || {} */
 const getLocalTheme = () => {
-	try {
-		return require('./static/theme.json')
-	} catch (err) {
-		return {}
-	}
+  try {
+    return require('./static/theme.json')
+  } catch (err) {
+    return {}
+  }
 }
 
 function App() {
-	const settings = useSettings()
-	return (
-		<ThemeProvider theme={getLocalTheme() || {}}>
-			<ContextProvider settings={settings}>
-				<div className='App'>
-					<Header />
-					<Content />
-					<Footer />
-				</div>
-			</ContextProvider>
-		</ThemeProvider>
-	)
+  const settings = useSettings()
+  return (
+    <ThemeProvider theme={getLocalTheme() || {}}>
+      <ContextProvider settings={settings}>
+        <div className='App'>
+          <Header />
+          <Content />
+          <Footer />
+        </div>
+      </ContextProvider>
+    </ThemeProvider>
+  )
 }
 
 export default App
