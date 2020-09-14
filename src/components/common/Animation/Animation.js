@@ -1,7 +1,7 @@
 import React, { useState, useRef, useLayoutEffect } from 'react'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 import { ComponentRef } from './Animations.style'
-import useWindowSize from '../../hooks/useWindowSize'
+import useWindowSize from '../../../hooks/useWindowSize'
 
 const Animation = props => {
 	const { children, animation = 'fade', positionStart: ps } = props
@@ -51,14 +51,16 @@ const useDimensions = () => {
 	useLayoutEffect(() => {
 		function updatePosition() {
 			const refPosition = {
-				offsetHeight: ref.current.offsetHeight,
-				offsetLeft: ref.current.offsetLeft,
-				offsetTop: ref.current.offsetTop,
-				offsetWidth: ref.current.offsetWidth
+				offsetHeight: ref?.current?.offsetHeight || 0,
+				offsetLeft: ref?.current?.offsetLeft || 0,
+				offsetTop: ref?.current?.offsetTop || 0,
+				offsetWidth: ref?.current?.offsetWidth || 0
 			}
 			setDimensions(refPosition)
 		}
-		setTimeout(updatePosition, 100)
+		if (ref.current !== null) {
+			setTimeout(updatePosition, 100)
+		}
 
 		// Add event listener
 		window.addEventListener('resize', updatePosition)

@@ -2,89 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 import TopFooter from './TopFooter'
 import BottomFooter from './BottomFooter'
-
-const dataTop = [
-	{
-		title: 'Institucional',
-		links: [
-			{
-				href: '/',
-				name: 'Homepage'
-			},
-			{
-				href: '/',
-				name: 'Rev Dev'
-			},
-			{
-				href: '/',
-				name: 'Rev Earth Group'
-			},
-			{
-				href: '/',
-				name: 'Contact us'
-			}
-		]
-	},
-	{
-		title: 'Ideas',
-		links: [
-			{
-				href: '/',
-				name: 'Ideas'
-			}
-		]
-	},
-	{
-		title: 'Socila Media',
-		links: [
-			{
-				href: '/',
-				name: 'Facebook'
-			},
-			{
-				href: '/',
-				name: 'Instagram'
-			},
-			{
-				href: '/',
-				name: 'Twitter'
-			},
-			{
-				href: '/',
-				name: 'Linkedin'
-			},
-			{
-				href: '/',
-				name: 'Youtube'
-			}
-		]
-	}
-]
-
-const dataBottom = {
-	copy: '© Rev Earth 2020',
-	links: [
-		{
-			href: '/',
-			name: 'Política de privacidad'
-		},
-		{
-			href: '/',
-			name: 'Terminos y condiciones'
-		},
-		{
-			href: '/',
-			name: 'Politica de cookies'
-		}
-	]
-}
+import useGetFile from '../../hooks/useGetFile'
 
 const Footer = () => {
+	const data = useGetFile('footer')
 	return (
 		<FooterContainer>
 			<Container>
-				<TopFooter blocks={dataTop} />
-				<BottomFooter {...dataBottom} />
+				<TopFooter blocks={data.dataTop} />
+				<BottomFooter {...data.dataBottom} />
 			</Container>
 			<Separator />
 		</FooterContainer>

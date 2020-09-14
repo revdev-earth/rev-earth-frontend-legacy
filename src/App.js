@@ -7,6 +7,8 @@ import Header from './components/Header'
 import Content from './components/Content'
 import Footer from './components/Footer'
 
+import useSettings from './hooks/useSettings'
+
 import './css/App.css'
 import 'normalize.css'
 
@@ -20,9 +22,10 @@ const getLocalTheme = () => {
 }
 
 function App() {
+	const settings = useSettings()
 	return (
 		<ThemeProvider theme={getLocalTheme() || {}}>
-			<ContextProvider>
+			<ContextProvider settings={settings}>
 				<div className='App'>
 					<Header />
 					<Content />

@@ -2,8 +2,9 @@ import React, { useState, useContext, memo } from 'react'
 import { ThemeContext } from 'styled-components'
 import styled from 'styled-components'
 import BoxLineComponent from './BoxLine'
-
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
+import Lenguage from '../Lenguage'
+
 const Header = memo(() => {
 	const theme = useContext(ThemeContext)
 	const [isScrolledDown, setIsScrolledDown] = useState(false)
@@ -32,6 +33,7 @@ const Header = memo(() => {
 				theme={theme}
 				shouldChangeStyle={passedLimit && !isScrolledDown}
 				passedLimit={passedLimit}>
+				<Lenguage shouldChangeStyle={!passedLimit} />
 				<BoxLineComponent shouldChangeStyle={!passedLimit} />
 			</Container>
 		</HeaderContainer>
@@ -42,7 +44,6 @@ const HeaderContainer = styled.header`
 	position: fixed;
 	width: 100vw;
 	z-index: 1;
-	overflow: hidden;
 
 	& > * {
 		pointer-events: auto;

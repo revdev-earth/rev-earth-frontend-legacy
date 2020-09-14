@@ -1,0 +1,76 @@
+{
+	"dataTop": [
+		{
+			"title": "Organisation",
+			"links": [
+				{
+					"href": "/",
+					"name": "Startseite"
+				},
+				{
+					"href": "/",
+					"name": "Rev Dev"
+				},
+				{
+					"href": "/",
+					"name": "Rev Erde Gruppe"
+				},
+				{
+					"href": "/",
+					"name": "Kontaktiere uns"
+				}
+			]
+		},
+		{
+			"title": "Ideen",
+			"links": [
+				{
+					"href": "/",
+					"name": "Ideen"
+				}
+			]
+		},
+		{
+			"title": "Sozialen Medien",
+			"links": [
+				{
+					"href": "/",
+					"name": "Facebook"
+				},
+				{
+					"href": "/",
+					"name": "Instagram"
+				},
+				{
+					"href": "/",
+					"name": "Twitter"
+				},
+				{
+					"href": "/",
+					"name": "Linkedin"
+				},
+				{
+					"href": "/",
+					"name": "Youtube"
+				}
+			]
+		}
+	],
+	"dataBottom": {
+		"copy": "© Rev Erde 2020",
+		"links": [
+			{
+				"href": "/",
+				"name": "Datenschutz-Bestimmungen"
+			},
+			{
+				"href": "/",
+				"name": "Geschäftsbedingungen"
+			},
+			{
+				"href": "/",
+				"name": "Cookie-Richtlinie"
+			}
+		]
+	}
+}
