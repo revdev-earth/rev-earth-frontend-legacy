@@ -2,14 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 
 /*  Modo de uso
-  <MenuHeader shouldChangeStyle={ shouldChangeStyle === bool } />
+  <MenuHeader affterlimit={ affterlimit === bool } />
 */
 
-const MenuHeader = ({ shouldChangeStyle }) => {
+const MenuHeader = ({ affterlimit }) => {
   return (
     <Menu>
       <ContainerButton>
-        <ButtonMenu aria-hidden='true' shouldChangeStyle={shouldChangeStyle}>
+        <ButtonMenu aria-hidden='true' affterlimit={affterlimit}>
           <ContainerIcon>
             <svg
               width='24'
@@ -55,7 +55,7 @@ export const ButtonMenu = styled.button`
   height: 24px;
   text-align: left;
   font-size: 0;
-  ${props => (props.shouldChangeStyle ? props.default : props.active)};
+  color: ${({ affterlimit, theme }) => (affterlimit ? theme.colors.white : theme.colors.primary)};
 
   border-width: 0;
   border-style: initial;
@@ -69,20 +69,10 @@ export const ButtonMenu = styled.button`
 
   &:hover,
   &:focus {
-    ${props => (props.shouldChangeStyle ? props.default : props.active)};
     outline: 0px;
+    color: ${({ affterlimit, theme }) => (affterlimit ? theme.colors.white : theme.colors.primary)};
   }
 `
-
-ButtonMenu.defaultProps = {
-  default: {
-    color: 'rgba(255, 255, 255, 0.98)'
-  },
-  active: {
-    color: 'rgb(76, 199, 244)',
-    color2: 'rgb(0, 30, 80)'
-  }
-}
 
 export const ContainerIcon = styled.div`
   display: inline-block;

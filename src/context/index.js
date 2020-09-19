@@ -1,9 +1,5 @@
 import React, { createContext, useReducer } from 'react'
 
-// const initialState = {
-// 	lenguage: 'es'
-// }
-
 // Create Context
 export const MyContext = createContext()
 
@@ -34,6 +30,8 @@ const reducer = (state, action) => {
 }
 
 // Create a provider for components to consume and subscribe to changes
+// in useReducer = initialState = settings
+// in reducer  = callback lisener
 export const ContextProvider = props => {
   const { settings, children } = props
   const [state, dispatch] = useReducer(reducer, settings)

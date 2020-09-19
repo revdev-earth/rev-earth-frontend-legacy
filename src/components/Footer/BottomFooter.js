@@ -20,6 +20,7 @@ const Container = styled.div`
     display: flex;
     -webkit-box-pack: justify;
     justify-content: space-between;
+    align-items: center;
   }
 `
 
@@ -51,7 +52,7 @@ const BlockChild = ({ link }) => {
 
 const Item = styled.div`
   font-family: Helvetica, Arial, sans-serif;
-  color: rgb(0, 0, 0);
+  color: ${({ theme }) => theme.colors.black};
   word-break: inherit;
   font-weight: normal;
   font-size: 1em;
@@ -70,7 +71,7 @@ const Item = styled.div`
 const Link = styled.a`
   position: relative;
   padding: 0.4rem 0;
-  color: rgb(0, 30, 80);
+  color: ${({ theme }) => theme.colors.primary};
   text-decoration: none;
 `
 

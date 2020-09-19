@@ -44,7 +44,7 @@ const Title = styled.div`
   font-size: 1em;
   line-height: 1em;
   letter-spacing: 0;
-  color: #333;
+  color: ${({ theme }) => theme.colors.primary};
   word-break: inherit;
   font-weight: bold;
   margin-bottom: 1.5rem;
@@ -65,7 +65,7 @@ const BlockChild = ({ link }) => {
 
 const Item = styled.li`
   font-family: Helvetica, Arial, sans-serif;
-  color: rgb(0, 0, 0);
+  color: ${({ theme }) => theme.colors.black};
   word-break: inherit;
   font-weight: normal;
   font-size: 1em;
@@ -78,7 +78,7 @@ const Link = styled.a`
   display: block;
   position: relative;
   padding: 0.4rem 0;
-  color: rgb(0, 30, 80);
+  color: ${({ theme }) => theme.colors.primary};
   text-decoration: none;
 `
 

@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const BoxLineComponent = ({ shouldChangeStyle }) => (
+const BoxLineComponent = ({ affterlimit }) => (
   <BoxLine className='box-line'>
-    <GridBoxLine shouldChangeStyle={shouldChangeStyle}>
-      <ContainerLogo shouldChangeStyle={shouldChangeStyle}>
+    <GridBoxLine affterlimit={affterlimit}>
+      <ContainerLogo affterlimit={affterlimit}>
         <a href='/' className='link-icon'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
@@ -23,7 +23,7 @@ const BoxLineComponent = ({ shouldChangeStyle }) => (
 )
 
 const BoxLine = styled.div`
-  padding: 2rem 0;
+  padding: 1.5rem 0;
 `
 
 export const GridBoxLine = styled.div`
@@ -36,40 +36,23 @@ export const GridBoxLine = styled.div`
   &::after {
     content: '';
     height: 0.2rem;
-    ${props => (props.shouldChangeStyle ? props.default : props.active)};
-    transition: all 0.3s ease-in-out 0.3s;
+    background-color: ${({ affterlimit, theme }) =>
+      affterlimit ? theme.colors.white : theme.colors.primary};
+    ${({ affterlimit, theme }) => !affterlimit && `boxShadow: 6px 6px 9px 0 ${theme.colors.white}`};
+    transition: all 600ms ease;
   }
 `
-
-GridBoxLine.defaultProps = {
-  default: {
-    backgroundColor: 'rgba(255, 255, 255, 0.98)'
-  },
-  active: {
-    backgroundColor: 'rgb(0, 30, 80)',
-    boxShadow: '6px 6px 9px 0 rgba(255,255,255,0.3)'
-  }
-}
 
 export const ContainerLogo = styled.div`
   pointer-events: auto;
   margin: 0 1rem;
 
   svg {
-    ${props => (props.shouldChangeStyle ? props.default : props.active)};
+    fill: ${({ affterlimit, theme }) => (affterlimit ? theme.colors.white : theme.colors.primary)};
     width: 2rem;
     height: 2rem;
-    transition: all 0.3s ease-in-out 0.3s;
+    transition: all 500ms ease;
   }
 `
-
-ContainerLogo.defaultProps = {
-  default: {
-    fill: 'rgba(255, 255, 255, 0.98)'
-  },
-  active: {
-    fill: 'rgb(0, 30, 80)'
-  }
-}
 
 export default BoxLineComponent
