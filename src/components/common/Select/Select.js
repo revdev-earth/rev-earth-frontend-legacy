@@ -113,8 +113,8 @@ const DropDownListContainer = styled.div`
 const DropDownList = styled.ul`
   font-size: 1rem;
   font-weight: 500;
-  color: ${({ affterlimit, theme }) => (affterlimit ? theme.colors.white : theme.colors.white)};
-  background: ${({ affterlimit, theme }) => (affterlimit ? theme.colors.primary : 'trasparent')};
+  color: ${({ affterlimit, theme }) => (affterlimit ? theme.colors.primary : theme.colors.white)};
+  background: ${({ affterlimit, theme }) => (affterlimit ? theme.colors.white : 'trasparent')};
   padding: 0.1rem;
   margin-top: 0.6rem;
   box-sizing: border-box;

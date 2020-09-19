@@ -59,7 +59,7 @@ const useDimensions = () => {
       setDimensions(refPosition)
     }
     if (ref.current !== null) {
-      setTimeout(updatePosition, 200)
+      setTimeout(updatePosition, 300)
     }
 
     // Add event listener
