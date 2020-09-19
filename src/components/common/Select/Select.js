@@ -118,6 +118,7 @@ const DropDownList = styled.ul`
   padding: 0.1rem;
   margin-top: 0.6rem;
   box-sizing: border-box;
+  border-radius: 3%;
   border: 1px solid
     ${({ affterlimit, theme }) => (affterlimit ? theme.colors.primary + '50' : 'transparent')};
 `
@@ -126,6 +127,8 @@ const ListItem = styled.li`
   list-style: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
+
+  border-radius: 3%;
 
   background-color: ${({ isSelected }) => (isSelected ? '#3faffa' : 'transparent')};
   transition: all 100ms ease;
