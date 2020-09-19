@@ -113,19 +113,20 @@ const DropDownListContainer = styled.div`
 const DropDownList = styled.ul`
   font-size: 1rem;
   font-weight: 500;
-  color: ${({ theme }) => theme.colors.black};
-  background: ${({ theme }) => theme.colors.white};
+  color: ${({ affterlimit, theme }) => (affterlimit ? theme.colors.white : theme.colors.white)};
+  background: ${({ affterlimit, theme }) => (affterlimit ? theme.colors.primary : 'trasparent')};
   padding: 0.1rem;
   margin-top: 0.6rem;
   box-sizing: border-box;
   border: 1px solid
-    ${({ affterlimit, theme }) => (affterlimit ? theme.colors.primary + '50' : theme.colors.white)};
+    ${({ affterlimit, theme }) => (affterlimit ? theme.colors.primary + '50' : 'transparent')};
 `
 
 const ListItem = styled.li`
   list-style: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
+
   background-color: ${({ isSelected }) => (isSelected ? '#3faffa' : 'transparent')};
   transition: all 100ms ease;
 
