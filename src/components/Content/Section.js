@@ -1,19 +1,10 @@
-import React, { memo } from "react";
-import styled from "styled-components";
-import Animation from "../common/Animation";
+import React, { memo } from 'react'
+import styled from 'styled-components'
+import Animation from '../common/Animation'
 
-const Section = memo((props) => {
-  const {
-    colsA,
-    colsB,
-    title = "",
-    text = "",
-    position,
-    animation,
-    positionStart,
-    img,
-  } = props;
-  const colums = useCols(colsA, colsB, position);
+const Section = memo(props => {
+  const { colsA, colsB, title = '', text = '', position, animation, positionStart, img } = props
+  const colums = useCols(colsA, colsB, position)
 
   return (
     <Container position={position}>
@@ -33,53 +24,53 @@ const Section = memo((props) => {
         </Grid>
       </Animation>
     </Container>
-  );
-});
+  )
+})
 
-const useCols = (colsA, colsB, position = "left") => {
-  let a = "";
-  let b = "";
+const useCols = (colsA, colsB, position = 'left') => {
+  let a = ''
+  let b = ''
 
-  colsA = Number(colsA);
-  colsB = Number(colsB);
+  colsA = Number(colsA)
+  colsB = Number(colsB)
 
   if (Number.isInteger(colsA)) {
-    a = "a0 ".repeat(colsA);
-    b = "b0 ".repeat(24 - colsA);
+    a = 'a0 '.repeat(colsA)
+    b = 'b0 '.repeat(24 - colsA)
   }
 
   if (Number.isInteger(colsB) && !Number.isInteger(colsA)) {
-    if (position === "right") {
-      a = "a0 ".repeat(colsB);
-      b = "b0 ".repeat(24 - colsB);
+    if (position === 'right') {
+      a = 'a0 '.repeat(colsB)
+      b = 'b0 '.repeat(24 - colsB)
     } else {
-      a = "a0 ".repeat(24 - colsB);
-      b = "b0 ".repeat(colsB);
+      a = 'a0 '.repeat(24 - colsB)
+      b = 'b0 '.repeat(colsB)
     }
   }
 
-  if (colsA > 24 || colsA < 0) colsA = 12;
-  if (colsB > 24 || colsB < 0) colsB = 12;
+  if (colsA > 24 || colsA < 0) colsA = 12
+  if (colsB > 24 || colsB < 0) colsB = 12
 
   if (colsA === 12 || colsB === 12) {
-    a = "a0 ".repeat(12);
-    b = "b0 ".repeat(12);
+    a = 'a0 '.repeat(12)
+    b = 'b0 '.repeat(12)
   }
 
-  if (position === "top" || position === "down") {
-    a = "a0 ".repeat(24 - 6);
-    b = "b0 ".repeat(24 - 6);
+  if (position === 'top' || position === 'down') {
+    a = 'a0 '.repeat(24 - 6)
+    b = 'b0 '.repeat(24 - 6)
   }
 
-  return { a, b, position };
-};
+  return { a, b, position }
+}
 
 const Container = styled.div`
   display: flex;
   margin: 6.7rem 0 0;
   overflow-x: hidden;
 
-  ${({ position }) => (position === "top" || position === "down") && "margin-top: 4rem;"}
+  ${({ position }) => (position === 'top' || position === 'down') && 'margin-top: 4rem;'}
 
   &:last-child {
     margin-bottom: 5rem;
@@ -92,7 +83,7 @@ const Container = styled.div`
       margin-top: 2.2rem;
     }
   }
-`;
+`
 
 const Grid = styled.div`
   @media (min-width: 560px) {
@@ -100,29 +91,29 @@ const Grid = styled.div`
     grid-template-columns: repeat(24, 1fr);
 
     ${({ colums }) => {
-      const { a, b, position } = colums;
-      let cols = "";
+      const { a, b, position } = colums
+      let cols = ''
       switch (position) {
-        case "left":
-          cols = `grid-template-areas: "${a}${b}"`;
-          break;
-        case "right":
-          cols = `grid-template-areas: "${b}${a}"`;
-          break;
-        case "top":
-          cols = `grid-template-areas: ". . . ${a} . . ." ". . . ${b} . . ."`;
-          break;
-        case "down":
-          cols = `grid-template-areas: ". . . ${b} . . ." ". . . ${a} . . ."`;
-          break;
+        case 'left':
+          cols = `grid-template-areas: "${a}${b}"`
+          break
+        case 'right':
+          cols = `grid-template-areas: "${b}${a}"`
+          break
+        case 'top':
+          cols = `grid-template-areas: ". . . ${a} . . ." ". . . ${b} . . ."`
+          break
+        case 'down':
+          cols = `grid-template-areas: ". . . ${b} . . ." ". . . ${a} . . ."`
+          break
         default:
-          cols = `grid-template-areas: "${a}${b}"`;
+          cols = `grid-template-areas: "${a}${b}"`
       }
 
-      return cols;
+      return cols
     }}
   }
-`;
+`
 
 const AreaA = styled.div`
   grid-area: a0 / a0 / a0 / a0;
@@ -131,7 +122,7 @@ const AreaA = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
+`
 
 const AreaB = styled.div`
   grid-area: b0 / b0 / b0 / b0;
@@ -140,7 +131,7 @@ const AreaB = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
+`
 
 const ContainerImg = styled.div`
   position: relative;
@@ -155,11 +146,11 @@ const ContainerImg = styled.div`
   }
   @media (min-width: 560px) {
     ${({ position }) => {
-      if (position === "left") return `margin-left: calc((100vw / 24) * 1);`;
-      if (position === "right") return `margin-right: calc((100vw / 24) * 1);`;
+      if (position === 'left') return `margin-left: calc((100vw / 24) * 1);`
+      if (position === 'right') return `margin-right: calc((100vw / 24) * 1);`
     }}
   }
-`;
+`
 
 const Img = styled.img`
   display: block;
@@ -168,7 +159,7 @@ const Img = styled.img`
   object-fit: cover;
   object-position: 50% 50%;
   filter: brightness(80%);
-`;
+`
 
 const ContainerText = styled.div`
   display: flex;
@@ -201,6 +192,6 @@ const ContainerText = styled.div`
       margin: 0 0 0.25rem;
     }
   }
-`;
+`
 
-export default Section;
+export default Section
