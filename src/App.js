@@ -1,20 +1,12 @@
 import React, { Suspense } from 'react'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
-import styled, { ThemeProvider } from 'styled-components'
+import styled from 'styled-components'
 import { ContextProvider } from './context'
 import initialContext from './utils/initialContext'
+import ThemeProvider from './context/theme'
 
 import './css/App.css'
 import 'normalize.css'
-
-/** Return './.theme.json' || {} */
-const getLocalTheme = () => {
-  try {
-    return require('./static/theme.json')
-  } catch (err) {
-    return {}
-  }
-}
 
 const Header = React.lazy(() => import('./components/Header'))
 const Content = React.lazy(() => import('./components/Content'))
@@ -23,8 +15,8 @@ const Footer = React.lazy(() => import('./components/Footer'))
 function App() {
   return (
     <HelmetProvider>
-      <ThemeProvider theme={getLocalTheme() || {}}>
-        <ContextProvider initial={initialContext() || {}}>
+      <ContextProvider initial={initialContext() || {}}>
+        <ThemeProvider>
           <Body className='Body'>
             <HelmetComponent />
             <Suspense fallback={<div>Loading...</div>}>
@@ -33,8 +25,8 @@ function App() {
               <Footer />
             </Suspense>
           </Body>
-        </ContextProvider>
-      </ThemeProvider>
+        </ThemeProvider>
+      </ContextProvider>
     </HelmetProvider>
   )
 }
@@ -57,6 +49,8 @@ const HelmetComponent = () => (
   </Helmet>
 )
 
-const Body = styled.div``
+const Body = styled.div`
+  background-color: ${({ theme }) => theme?.colors?.background};
+`
 
 export default App

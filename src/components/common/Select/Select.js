@@ -68,7 +68,7 @@ const DropDownContainer = styled.div`
   &:hover > div:first-of-type,
   &:focus > div:first-of-type,
   &:active > div:first-of-type {
-    box-shadow: 0px 6px 0px -5px ${({ affterlimit, theme }) => (affterlimit ? theme.colors.primary : theme.colors.white)};
+    box-shadow: 0px 6px 0px -5px ${({ affterlimit, theme }) => (affterlimit ? theme?.colors?.primary : theme?.colors?.white)};
   }
   transition: all 0.3s ease;
 `
@@ -76,7 +76,8 @@ const DropDownContainer = styled.div`
 const DropDownHeader = styled.div`
   padding: 0;
   font-size: 1em;
-  color: ${({ affterlimit, theme }) => (affterlimit ? theme.colors.primary : theme.colors.white)};
+  color: ${({ affterlimit, theme }) =>
+    affterlimit ? theme?.colors?.primary : theme?.colors?.white};
   background: transparent;
   display: flex;
   align-items: center;
@@ -89,7 +90,8 @@ const ContainerIcon = styled.div`
   padding: 0;
 
   svg {
-    fill: ${({ affterlimit, theme }) => (affterlimit ? theme.colors.primary : theme.colors.white)};
+    fill: ${({ affterlimit, theme }) =>
+      affterlimit ? theme?.colors?.primary : theme?.colors?.white};
   }
 `
 
@@ -113,14 +115,15 @@ const DropDownListContainer = styled.div`
 const DropDownList = styled.ul`
   font-size: 1rem;
   font-weight: 500;
-  color: ${({ affterlimit, theme }) => (affterlimit ? theme.colors.primary : theme.colors.white)};
-  background: ${({ affterlimit, theme }) => (affterlimit ? theme.colors.white : 'trasparent')};
+  color: ${({ affterlimit, theme }) =>
+    affterlimit ? theme?.colors?.primary : theme?.colors?.white};
+  background: ${({ affterlimit, theme }) => (affterlimit ? theme?.colors?.white : 'trasparent')};
   padding: 0.1rem;
   margin-top: 0.6rem;
   box-sizing: border-box;
   border-radius: 3%;
   border: 1px solid
-    ${({ affterlimit, theme }) => (affterlimit ? theme.colors.primary + '50' : 'transparent')};
+    ${({ affterlimit, theme }) => (affterlimit ? theme?.colors?.primary + '50' : 'transparent')};
 `
 
 const ListItem = styled.li`

@@ -58,6 +58,7 @@ const useDimensions = () => {
       }
       setDimensions(refPosition)
     }
+
     if (ref.current !== null) {
       setTimeout(updatePosition, 300)
     }

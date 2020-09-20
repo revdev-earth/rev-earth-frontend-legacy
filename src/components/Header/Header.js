@@ -1,12 +1,11 @@
-import React, { useState, useContext, memo } from 'react'
-import { ThemeContext } from 'styled-components'
+import React, { useState, memo } from 'react'
 import styled from 'styled-components'
 import BoxLineComponent from './BoxLine'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
 import Lenguage from '../Lenguage'
+import SwitchTheme from './SwitchTheme'
 
 const Header = memo(() => {
-  const theme = useContext(ThemeContext)
   const [isScrolledDown, setIsScrolledDown] = useState(false)
   const [affterlimit, setaffterlimit] = useState(false)
 
@@ -26,10 +25,10 @@ const Header = memo(() => {
     false,
     300
   )
-
   return (
     <HeaderContainer>
-      <Container theme={theme} affterlimit={affterlimit}>
+      <Container affterlimit={affterlimit}>
+        <SwitchTheme />
         <Lenguage affterlimit={affterlimit} />
         <BoxLineComponent affterlimit={!affterlimit} />
       </Container>
@@ -51,7 +50,7 @@ const HeaderContainer = styled.header`
 
 const Container = styled.div`
   background-color: ${({ affterlimit, theme }) =>
-    affterlimit ? theme.colors.white : 'transparent'};
+    affterlimit ? theme?.colors?.background : 'transparent'};
   transition: all 400ms ease;
 `
 

@@ -167,6 +167,7 @@ const ContainerText = styled.div`
   justify-content: flex-end;
   opacity: 1;
   pointer-events: all;
+  color: ${({ theme }) => theme?.colors?.text};
 
   margin-left: calc((100vw / 24) * 2);
   margin-right: calc((100vw / 24) * 2);

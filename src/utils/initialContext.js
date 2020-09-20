@@ -5,8 +5,11 @@ import checkoutLenguage from './checkLenguage'
 // function initialize Context
 export default function initialContext() {
   let storage = Storage
-  let initialContext = {}
   let contextStorage = storage.get('context')
+  let initialContext = {
+    lenguage: 'en',
+    theme: 'light'
+  }
 
   // if local storage context then use localContext
   if (contextStorage) {

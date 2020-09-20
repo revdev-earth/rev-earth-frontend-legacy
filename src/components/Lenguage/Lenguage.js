@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import Select from '../common/Select'
 import styled from 'styled-components'
-import { MyContext } from '../../context'
+import { Context } from '../../context'
 
 const lenguages = [
   { value: 'es', label: 'Español' },
@@ -13,7 +13,7 @@ const Lenguage = props => {
   const {
     context: { lenguage: lenguageContext },
     dispatch
-  } = useContext(MyContext)
+  } = useContext(Context)
 
   const setLenguage = option => {
     dispatch({ type: 'SET_LENGUAGE', payload: option.value })

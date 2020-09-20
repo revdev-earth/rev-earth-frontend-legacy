@@ -55,7 +55,8 @@ export const ButtonMenu = styled.button`
   height: 24px;
   text-align: left;
   font-size: 0;
-  color: ${({ affterlimit, theme }) => (affterlimit ? theme.colors.white : theme.colors.primary)};
+  color: ${({ affterlimit, theme }) =>
+    affterlimit ? theme?.colors?.white : theme?.colors?.primary};
 
   border-width: 0;
   border-style: initial;
@@ -70,7 +71,8 @@ export const ButtonMenu = styled.button`
   &:hover,
   &:focus {
     outline: 0px;
-    color: ${({ affterlimit, theme }) => (affterlimit ? theme.colors.white : theme.colors.primary)};
+    color: ${({ affterlimit, theme }) =>
+      affterlimit ? theme?.colors?.white : theme?.colors?.primary};
   }
 `
 
