@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import Select from '../common/Select'
-import { checkLenguage } from '../../utils/translation'
 import styled from 'styled-components'
 import { MyContext } from '../../context'
 
@@ -11,18 +10,21 @@ const lenguages = [
 ]
 
 const Lenguage = props => {
-  const { dispatch } = useContext(MyContext)
+  const {
+    context: { lenguage: lenguageContext },
+    dispatch
+  } = useContext(MyContext)
 
   const setLenguage = option => {
     dispatch({ type: 'SET_LENGUAGE', payload: option.value })
   }
 
   function getDefault() {
-    const recognicedLenguage = checkLenguage()
     let defultLenguage = ''
-    for (let i = 0; i < lenguages.length - 1; i++) {
-      if (lenguages[i].value === recognicedLenguage) {
+    for (let i = 0; i < lenguages.length; i++) {
+      if (lenguages[i].value === lenguageContext) {
         defultLenguage = lenguages[i]
+        break
       }
     }
     return defultLenguage

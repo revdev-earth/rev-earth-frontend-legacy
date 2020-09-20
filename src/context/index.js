@@ -1,4 +1,5 @@
-import React, { createContext, useReducer } from 'react'
+import React, { createContext, useReducer, useEffect } from 'react'
+import Storage from '../utils/Storage'
 
 // Create Context
 export const MyContext = createContext()
@@ -30,11 +31,17 @@ const reducer = (state, action) => {
 }
 
 // Create a provider for components to consume and subscribe to changes
-// in useReducer = initialState = settings
+// in useReducer = initialState = initial
 // in reducer  = callback lisener
 export const ContextProvider = props => {
-  const { settings, children } = props
-  const [state, dispatch] = useReducer(reducer, settings)
+  const { initial, children } = props
+  const storage = Storage
+  const [state, dispatch] = useReducer(reducer, initial)
+
+  // Update localStorage
+  useEffect(() => {
+    storage.update('context', state)
+  }, [state, storage])
 
   return (
     <MyContext.Provider value={{ context: state, dispatch: dispatch }}>
