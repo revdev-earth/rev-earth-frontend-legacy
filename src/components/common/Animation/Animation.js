@@ -18,7 +18,7 @@ const Animation = props => {
         }
       }
 
-      let psn = ps === 'top' ? 3.5 : ps === 'bottom' ? 1 : 3
+      let psn = ps === 'top' ? 3.5 : ps === 'bottom' ? 2 : 3
       if (windowSize.width < 767) psn = 4
 
       const positionScrollDown = Math.abs(currPos.y) + vh
@@ -58,8 +58,9 @@ const useDimensions = () => {
       }
       setDimensions(refPosition)
     }
+
     if (ref.current !== null) {
-      setTimeout(updatePosition, 100)
+      setTimeout(updatePosition, 300)
     }
 
     // Add event listener

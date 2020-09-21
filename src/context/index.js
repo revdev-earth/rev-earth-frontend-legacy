@@ -1,13 +1,16 @@
-import React, { createContext, useReducer } from 'react'
+import React, { createContext, useReducer, useEffect } from 'react'
+import Storage from '../utils/Storage'
 
 // Create Context
-export const MyContext = createContext()
+export const Context = createContext()
 
 // Create Reducer
 const reducer = (state, action) => {
   switch (action.type) {
     case 'SET_LENGUAGE':
       return { ...state, lenguage: action.payload }
+    case 'SET_THEME':
+      return { ...state, theme: action.payload }
     case 'ADD_CONTACT':
       return {
         contacts: [...state.contacts, action.payload]
@@ -30,15 +33,19 @@ const reducer = (state, action) => {
 }
 
 // Create a provider for components to consume and subscribe to changes
-// in useReducer = initialState = settings
+// in useReducer = initialState = initial
 // in reducer  = callback lisener
 export const ContextProvider = props => {
-  const { settings, children } = props
-  const [state, dispatch] = useReducer(reducer, settings)
+  const { initial, children } = props
+  const storage = Storage
+  const [state, dispatch] = useReducer(reducer, initial)
+
+  // Update localStorage
+  useEffect(() => {
+    storage.update('context', state)
+  }, [state, storage])
 
   return (
-    <MyContext.Provider value={{ context: state, dispatch: dispatch }}>
-      {children}
-    </MyContext.Provider>
+    <Context.Provider value={{ context: state, dispatch: dispatch }}>{children}</Context.Provider>
   )
 }

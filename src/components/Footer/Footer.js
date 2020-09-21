@@ -22,7 +22,7 @@ const FooterContainer = styled.footer`
 `
 
 const Container = styled.div`
-  border-top: 2px solid ${({ theme }) => theme.colors.primary};
+  border-top: 2px solid ${({ theme }) => theme?.colors?.links};
 
   @media (max-width: 559px) {
     padding: 3rem 0;
@@ -37,7 +37,7 @@ const Separator = styled.div`
     padding: 2rem 0 1rem;
   }
   @media (min-width: 560px) {
-    border-top: 1px solid ${({ theme }) => theme.colors.primary};
+    border-top: 1px solid ${({ theme }) => theme?.colors?.primary};
     padding-top: 4rem;
   }
 `

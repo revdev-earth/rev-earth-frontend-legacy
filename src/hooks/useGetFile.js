@@ -1,11 +1,11 @@
 import { useContext } from 'react'
-import { MyContext } from '../context'
+import { Context } from '../context'
 
 // Hook
 export default function useGetFile(section) {
   const {
     context: { lenguage }
-  } = useContext(MyContext)
+  } = useContext(Context)
 
   const getFile = () => {
     try {
