@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 // import { checkLenguage } from './translation'
 import Storage from './Storage'
 import checkoutLenguage from './checkLenguage'
@@ -23,6 +22,7 @@ export default function initialContext() {
     // set context actual into localStorage
     storage.set('context', initialContext)
   }
+
 
   initialContext.theme = macthMediaTheme()
 
