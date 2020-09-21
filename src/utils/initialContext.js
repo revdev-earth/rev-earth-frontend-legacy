@@ -23,7 +23,6 @@ export default function initialContext() {
     storage.set('context', initialContext)
   }
 
-
   initialContext.theme = macthMediaTheme()
 
   // return initalContext
