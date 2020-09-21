@@ -23,6 +23,25 @@ export default function initialContext() {
     storage.set('context', initialContext)
   }
 
+  initialContext.theme = macthMediaTheme()
+
   // return initalContext
   return initialContext
+}
+
+function macthMediaTheme() {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    return 'dark'
+  }
+  return 'light'
+  // To watch for changes:
+
+  // useEffect(() => {
+  //   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+  //     setTheme(e.matches ? 'dark' : 'light')
+  //   })
+  //   return () => {
+  //     window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change')
+  //   }
+  // }, [])
 }
