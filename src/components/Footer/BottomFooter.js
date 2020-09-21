@@ -52,7 +52,7 @@ const BlockChild = ({ link }) => {
 
 const Item = styled.div`
   font-family: Helvetica, Arial, sans-serif;
-  color: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme?.colors?.black};
   word-break: inherit;
   font-weight: normal;
   font-size: 1em;
@@ -71,8 +71,13 @@ const Item = styled.div`
 const Link = styled.a`
   position: relative;
   padding: 0.4rem 0;
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme?.colors?.link.default};
   text-decoration: none;
+
+  &:hover,
+  &:active {
+    color: ${({ theme }) => theme?.colors?.link.hover};
+  }
 `
 
 export default BottomFooter

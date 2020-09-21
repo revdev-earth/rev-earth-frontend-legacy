@@ -37,8 +37,9 @@ export const GridBoxLine = styled.div`
     content: '';
     height: 0.2rem;
     background-color: ${({ affterlimit, theme }) =>
-      affterlimit ? theme.colors.white : theme.colors.primary};
-    ${({ affterlimit, theme }) => !affterlimit && `boxShadow: 6px 6px 9px 0 ${theme.colors.white}`};
+      affterlimit ? theme?.colors?.white : theme?.colors?.primary};
+    ${({ affterlimit, theme }) =>
+      !affterlimit && `boxShadow: 6px 6px 9px 0 ${theme?.colors?.white}`};
     transition: all 600ms ease;
   }
 `
@@ -48,7 +49,8 @@ export const ContainerLogo = styled.div`
   margin: 0 1rem;
 
   svg {
-    fill: ${({ affterlimit, theme }) => (affterlimit ? theme.colors.white : theme.colors.primary)};
+    fill: ${({ affterlimit, theme }) =>
+      affterlimit ? theme?.colors?.white : theme?.colors?.primary};
     width: 2rem;
     height: 2rem;
     transition: all 500ms ease;
