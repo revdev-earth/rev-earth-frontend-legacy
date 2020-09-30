@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { ThemeProvider as Provider } from 'styled-components'
-import { Context } from '../context'
+import { Context } from '.'
 
 /** Return './.theme.json' || {} */
 const getLocalTheme = theme => {
