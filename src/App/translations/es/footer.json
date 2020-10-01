@@ -8,15 +8,16 @@
           "name": "Casa"
         },
         {
-          "href": "/",
-          "name": "Rev Dev"
+          "href": "https://revdev.rev.earth",
+          "name": "Rev Dev",
+          "outside": true
         },
         {
-          "href": "/",
+          "href": "/group",
           "name": "Rev Earth Grupo"
         },
         {
-          "href": "/",
+          "href": "/contact-us",
           "name": "Contactactanos"
         }
       ]
@@ -25,7 +26,7 @@
       "title": "Ideas",
       "links": [
         {
-          "href": "/",
+          "href": "/ideas",
           "name": "Ideas"
         }
       ]
@@ -34,24 +35,14 @@
       "title": "Socila Media",
       "links": [
         {
-          "href": "/",
-          "name": "Facebook"
+          "href": "https://facebook.com/rev.earth",
+          "name": "Facebook",
+          "outside": true
         },
         {
-          "href": "/",
-          "name": "Instagram"
-        },
-        {
-          "href": "/",
-          "name": "Twitter"
-        },
-        {
-          "href": "/",
-          "name": "Linkedin"
-        },
-        {
-          "href": "/",
-          "name": "Youtube"
+          "href": "https://instagram.com/rev.earth",
+          "name": "Instagram",
+          "outside": true
         }
       ]
     }
@@ -60,15 +51,15 @@
     "copy": "© Rev Earth 2020",
     "links": [
       {
-        "href": "/",
+        "href": "/privacy-policy",
         "name": "Política de privacidad"
       },
       {
-        "href": "/",
+        "href": "/terms-and-conditions",
         "name": "Terminos y condiciones"
       },
       {
-        "href": "/",
+        "href": "/cookies-policy",
         "name": "Politica de cookies"
       }
     ]

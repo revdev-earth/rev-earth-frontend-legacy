@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const TopFooter = ({ blocks }) => {
   return (
@@ -58,7 +59,13 @@ const List = styled.ul`
 const BlockChild = ({ link }) => {
   return (
     <Item>
-      <Link href={link.href}>{link.name}</Link>
+      {link.href.indexOf('http') > -1 ? (
+        <a href={link.href} alt={link.name}>
+          {link.name}
+        </a>
+      ) : (
+        <Link to={link.href}>{link.name}</Link>
+      )}
     </Item>
   )
 }
@@ -72,18 +79,18 @@ const Item = styled.li`
   line-height: 1em;
   letter-spacing: 0.04em;
   margin: 0 0px 0.11em;
-`
 
-const Link = styled.a`
-  display: block;
-  position: relative;
-  padding: 0.4rem 0;
-  color: ${({ theme }) => theme?.colors?.link.default};
-  text-decoration: none;
+  a {
+    display: block;
+    position: relative;
+    padding: 0.4rem 0;
+    color: ${({ theme }) => theme?.colors?.link.default};
+    text-decoration: none;
 
-  &:hover,
-  &:active {
-    color: ${({ theme }) => theme?.colors?.link.hover};
+    &:hover,
+    &:active {
+      color: ${({ theme }) => theme?.colors?.link.hover};
+    }
   }
 `
 

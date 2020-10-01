@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react'
-// import { checkLenguage } from './translation'
 import Storage from './Storage'
 import checkoutLenguage from './checkLenguage'
 
@@ -35,14 +33,4 @@ function macthMediaTheme() {
     return 'dark'
   }
   return 'light'
-  // To watch for changes:
-
-  // useEffect(() => {
-  //   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-  //     setTheme(e.matches ? 'dark' : 'light')
-  //   })
-  //   return () => {
-  //     window.matchMedia('(prefers-color-scheme: dark)').removeEventListener('change')
-  //   }
-  // }, [])
 }

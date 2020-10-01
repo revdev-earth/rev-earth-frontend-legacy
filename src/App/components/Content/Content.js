@@ -29,7 +29,7 @@ const imgs = [
 ]
 
 const Content = () => {
-  const data = useGetFile('content')
+  const data = useGetFile('home')
   return (
     <>
       <Intro title='Rev Earth' animation='zoom-out' img={imgs[0]} />

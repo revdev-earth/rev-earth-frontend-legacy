@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const BottomFooter = props => {
   const { copy, links } = props
@@ -45,7 +46,13 @@ const BlockRight = styled.div`
 const BlockChild = ({ link }) => {
   return (
     <Item>
-      <Link href={link.href}>{link.name}</Link>
+      {link.href.indexOf('http') > -1 ? (
+        <a href={link.href} alt={link.name}>
+          {link.name}
+        </a>
+      ) : (
+        <Link to={link.href}>{link.name}</Link>
+      )}
     </Item>
   )
 }
@@ -66,17 +73,17 @@ const Item = styled.div`
       margin: 0 1rem;
     }
   }
-`
 
-const Link = styled.a`
-  position: relative;
-  padding: 0.4rem 0;
-  color: ${({ theme }) => theme?.colors?.link.default};
-  text-decoration: none;
+  a {
+    position: relative;
+    padding: 0.4rem 0;
+    color: ${({ theme }) => theme?.colors?.link.default};
+    text-decoration: none;
 
-  &:hover,
-  &:active {
-    color: ${({ theme }) => theme?.colors?.link.hover};
+    &:hover,
+    &:active {
+      color: ${({ theme }) => theme?.colors?.link.hover};
+    }
   }
 `
 

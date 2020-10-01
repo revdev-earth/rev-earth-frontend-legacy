@@ -4,12 +4,15 @@ import styled from 'styled-components'
 import { ContextProvider } from './context'
 import initialContext from './utils/initialContext'
 import ThemeProvider from './context/theme'
+import Loader from './components/Loader'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 import './css/App.css'
 import 'normalize.css'
 
 const Header = React.lazy(() => import('./components/Header'))
-const Content = React.lazy(() => import('./components/Content'))
+// const Content = React.lazy(() => import('./components/Content'))
+const SwitchRoutes = React.lazy(() => import('./router'))
 const Footer = React.lazy(() => import('./components/Footer'))
 
 function App() {
@@ -19,10 +22,14 @@ function App() {
         <ThemeProvider>
           <Body className='Body'>
             <HelmetComponent />
-            <Suspense fallback={<div>Loading...</div>}>
-              <Header />
-              <Content />
-              <Footer />
+            <Suspense fallback={<Loader />}>
+              <Router>
+                <Header />
+                {/* Aqui poner el rooter */}
+                <SwitchRoutes />
+                {/* <Content /> */}
+                <Footer />
+              </Router>
             </Suspense>
           </Body>
         </ThemeProvider>
