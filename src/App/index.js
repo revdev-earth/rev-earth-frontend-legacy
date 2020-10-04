@@ -7,6 +7,8 @@ import ThemeProvider from './context/theme'
 import Loader from './components/Loader'
 import { BrowserRouter as Router } from 'react-router-dom'
 
+import useGetData from './hooks/useGetData'
+
 import './css/App.css'
 import 'normalize.css'
 
@@ -16,6 +18,7 @@ const SwitchRoutes = React.lazy(() => import('./router'))
 const Footer = React.lazy(() => import('./components/Footer'))
 
 function App() {
+  const data = useGetData()
   return (
     <HelmetProvider>
       <ContextProvider initial={initialContext() || {}}>
@@ -26,7 +29,7 @@ function App() {
               <Router>
                 <Header />
                 {/* Aqui poner el rooter */}
-                <SwitchRoutes />
+                <SwitchRoutes data={data} />
                 {/* <Content /> */}
                 <Footer />
               </Router>

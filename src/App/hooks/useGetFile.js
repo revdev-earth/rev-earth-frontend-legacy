@@ -11,6 +11,7 @@ export default function useGetFile(section) {
     try {
       return require(`../translations/${lenguage}/${section}.json`)
     } catch (err) {
+      console.warn(':: err ==> ', err)
       return {}
     }
   }

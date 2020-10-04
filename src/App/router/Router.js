@@ -69,11 +69,11 @@ const routes = [
   }
 ]
 
-export default function SwitchRoutes() {
+export default function SwitchRoutes({ data }) {
   return (
     <Switch>
       {routes.map((route, i) => (
-        <RouteWithSubRoutes key={i} {...route} />
+        <RouteWithSubRoutes key={i} route={route} data={data} />
       ))}
     </Switch>
   )
@@ -82,13 +82,18 @@ export default function SwitchRoutes() {
 // A special wrapper for <Route> that knows how to
 // handle "sub"-routes by passing them in a `routes`
 // prop to the component it renders.
-function RouteWithSubRoutes(route) {
+function RouteWithSubRoutes({ route, data }) {
   return (
     <Route
       path={route.path}
       render={props => (
         // pass the sub-routes down to keep nesting
-        <route.component {...props} routes={route.routes} exact={route.exact || false} />
+        <route.component
+          {...props}
+          data={data}
+          routes={route.routes}
+          exact={route.exact || false}
+        />
       )}
     />
   )

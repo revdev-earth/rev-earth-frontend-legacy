@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import Section from './Section'
 import Intro from './Intro'
-import useGetFile from '../../hooks/useGetFile'
 
 import Image1 from '../../static/images/milky.jpg'
 import Image2 from '../../static/images/meditation.jpg'
@@ -28,38 +27,39 @@ const imgs = [
   }
 ]
 
-const Content = () => {
-  const data = useGetFile('home')
+const Content = ({ data }) => {
   return (
-    <>
-      <Intro title='Rev Earth' animation='zoom-out' img={imgs[0]} />
-      <ContainerSections>
-        <Section
-          colsA='14'
-          title={data.section1.title}
-          text={data.section1.text}
-          position='left'
-          animation='fade-right'
-          img={imgs[1]}
-        />
-        <Section
-          colsB='14'
-          title={data.section2.title}
-          text={data.section2.text}
-          position='right'
-          animation='fade-left'
-          img={imgs[2]}
-        />
-        <Section
-          title={data.section3.title}
-          text={data.section3.text}
-          position='down'
-          animation='fade-up'
-          positionStart='top'
-          img={imgs[3]}
-        />
-      </ContainerSections>
-    </>
+    Object.keys(data).length > 0 && (
+      <>
+        <Intro title='Rev Earth' animation='zoom-out' img={imgs[0]} />
+        <ContainerSections>
+          <Section
+            colsA='14'
+            title={data.section1.title}
+            text={data.section1.text}
+            position='left'
+            animation='fade-right'
+            img={imgs[1]}
+          />
+          <Section
+            colsB='14'
+            title={data.section2.title}
+            text={data.section2.text}
+            position='right'
+            animation='fade-left'
+            img={imgs[2]}
+          />
+          <Section
+            title={data.section3.title}
+            text={data.section3.text}
+            position='down'
+            animation='fade-up'
+            positionStart='top'
+            img={imgs[3]}
+          />
+        </ContainerSections>
+      </>
+    )
   )
 }
 
