@@ -17,12 +17,11 @@ export default function initialContext() {
   } else {
     // Check the initial Lenguage of the browser
     initialContext.lenguage = checkoutLenguage()
+    initialContext.theme = macthMediaTheme()
 
     // set context actual into localStorage
     storage.set('context', initialContext)
   }
-
-  initialContext.theme = macthMediaTheme()
 
   // return initalContext
   return initialContext

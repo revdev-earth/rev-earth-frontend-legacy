@@ -159,6 +159,7 @@ const Button = styled.button`
   display: block;
   cursor: pointer;
   transition: all ease 0.2s;
+  color: #999999;
 
   &:hover {
     border-color: #11998e;
