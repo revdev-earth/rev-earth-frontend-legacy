@@ -9,8 +9,8 @@ export default function Ideas(props) {
   return (
     <Container>
       <h1>{ideas.title}</h1>
-      {ideas.texts.map(text => (
-        <p>{text}</p>
+      {ideas.texts.map((text, index) => (
+        <p key={Math.random()}>{text}</p>
       ))}
     </Container>
   )

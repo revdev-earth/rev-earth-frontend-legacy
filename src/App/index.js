@@ -11,12 +11,7 @@ import useGetData from './hooks/useGetData'
 import './css/App.css'
 import 'normalize.css'
 
-const Header = React.lazy(() => import('./components/Header'))
-const SwitchRoutes = React.lazy(() => import('./router'))
-const Footer = React.lazy(() => import('./components/Footer'))
-
 function App() {
-  const data = useGetData()
   const initial = initialContext()
 
   return (
@@ -27,17 +22,35 @@ function App() {
             <HelmetComponent />
             <Suspense fallback={<Loader />}>
               <Router>
-                <Header />
-                {/* Aqui poner el rooter */}
-                <SwitchRoutes data={data} />
-                {/* <Content /> */}
-                <Footer />
+                <Core />
               </Router>
             </Suspense>
           </Body>
         </ThemeProvider>
       </ContextProvider>
     </HelmetProvider>
+  )
+}
+
+const Header = React.lazy(() => import('./components/Header'))
+const SwitchRoutes = React.lazy(() => import('./router'))
+const Footer = React.lazy(() => import('./components/Footer'))
+
+const Core = () => {
+  const {
+    context: { lenguage }
+  } = useContext(Context)
+
+  const data = useGetData(lenguage)
+
+  return (
+    <>
+      <Header />
+      {/* Aqui poner el rooter */}
+      <SwitchRoutes data={data} />
+      {/* <Content /> */}
+      <Footer />
+    </>
   )
 }
 

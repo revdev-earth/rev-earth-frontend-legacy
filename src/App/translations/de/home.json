@@ -1,24 +1,24 @@
 {
   "Intro": {},
   "section1": {
-    "title": "Ideen, die sich ändern",
-    "text": "Gemeinsam schaffen wir unsere Welt",
+    "title": "Ideas que cambian",
+    "text": "Juntos creamos nuestro mundo",
     "img": {
       "src": "public/images/meditation.jpg",
       "alt": "meditation"
     }
   },
   "section2": {
-    "title": "Teile von Rev Earth",
+    "title": "Partes de Rev Earth",
     "text": "Rev Dev - Rev Store - Rev Trade",
     "img": {
       "src": "public/images/bamboo.jpg",
-      "alt": "Bambus"
+      "alt": "bamboo"
     }
   },
   "section3": {
-    "title": "Bewusste Welt",
-    "text": "Lasst uns bewusste Teile unserer Welt sein",
+    "title": "Mundo Conciente",
+    "text": "Seamos partes conscientes de nuestro mundo",
     "img": {
       "src": "public/images/adventure.jpg",
       "alt": "adventure"

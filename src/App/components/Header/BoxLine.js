@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const BoxLineComponent = ({ affterlimit }) => (
   <BoxLine className='box-line'>
     <GridBoxLine affterlimit={affterlimit}>
       <ContainerLogo affterlimit={affterlimit}>
-        <a href='/' className='link-icon'>
+        <Link to='/' className='link-icon'>
           <svg
             xmlns='http://www.w3.org/2000/svg'
             height='512pt'
@@ -16,7 +17,7 @@ const BoxLineComponent = ({ affterlimit }) => (
             <path d='m31.046875 323.402344c-11.335937 0-21.949219-3.121094-31.046875-8.535156v166.082031c0 17.117187 13.929688 31.042969 31.046875 31.042969 17.121094 0 31.046875-13.925782 31.046875-31.042969v-157.546875zm0 0' />
             <path d='m201.394531 293.53125c80.925781 0 146.765625-65.839844 146.765625-146.765625s-65.839844-146.765625-146.765625-146.765625h-170.347656c-17.121094 0-31.046875 13.929688-31.046875 31.046875s13.929688 31.046875 31.046875 31.046875h170.347656c46.6875 0 84.671875 37.984375 84.671875 84.671875 0 46.691406-37.984375 84.671875-84.671875 84.671875h-170.347656c-17.121094 0-31.046875 13.929688-31.046875 31.046875 0 17.121094 13.929688 31.046875 31.046875 31.046875zm0 0' />
           </svg>
-        </a>
+        </Link>
       </ContainerLogo>
     </GridBoxLine>
   </BoxLine>

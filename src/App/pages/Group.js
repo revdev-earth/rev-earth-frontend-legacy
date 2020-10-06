@@ -9,8 +9,8 @@ export default function Group(props) {
   return (
     <Container>
       <h1>{group.title}</h1>
-      {group.texts.map(text => (
-        <p>{text}</p>
+      {group.texts.map((text, index) => (
+        <p key={Math.random()}>{text}</p>
       ))}
     </Container>
   )

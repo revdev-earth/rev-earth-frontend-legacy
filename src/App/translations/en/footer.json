@@ -1,23 +1,24 @@
 {
   "dataTop": [
     {
-      "title": "Organization",
+      "title": "Organizacion",
       "links": [
         {
           "href": "/",
-          "name": "Homepage"
+          "name": "Casa"
         },
         {
-          "href": "/",
-          "name": "Rev Dev"
+          "href": "https://revdev.rev.earth",
+          "name": "Rev Dev",
+          "outside": true
         },
         {
-          "href": "/",
-          "name": "Rev Earth Group"
+          "href": "/group",
+          "name": "Rev Earth Grupo"
         },
         {
-          "href": "/",
-          "name": "Contact us"
+          "href": "/contact-us",
+          "name": "Contactactanos"
         }
       ]
     },
@@ -25,33 +26,23 @@
       "title": "Ideas",
       "links": [
         {
-          "href": "/",
+          "href": "/ideas",
           "name": "Ideas"
         }
       ]
     },
     {
-      "title": "Social Media",
+      "title": "Socila Media",
       "links": [
         {
-          "href": "/",
-          "name": "Facebook"
+          "href": "https://facebook.com/rev.earth",
+          "name": "Facebook",
+          "outside": true
         },
         {
-          "href": "/",
-          "name": "Instagram"
-        },
-        {
-          "href": "/",
-          "name": "Twitter"
-        },
-        {
-          "href": "/",
-          "name": "Linkedin"
-        },
-        {
-          "href": "/",
-          "name": "Youtube"
+          "href": "https://instagram.com/rev.earth",
+          "name": "Instagram",
+          "outside": true
         }
       ]
     }
@@ -60,16 +51,16 @@
     "copy": "© Rev Earth 2020",
     "links": [
       {
-        "href": "/",
-        "name": "Privacy Policy"
+        "href": "/privacy-policy",
+        "name": "Política de privacidad"
       },
       {
-        "href": "/",
-        "name": "Terms and Conditions"
+        "href": "/terms-and-conditions",
+        "name": "Terminos y condiciones"
       },
       {
-        "href": "/",
-        "name": "Cookies policy"
+        "href": "/cookies-policy",
+        "name": "Politica de cookies"
       }
     ]
   }

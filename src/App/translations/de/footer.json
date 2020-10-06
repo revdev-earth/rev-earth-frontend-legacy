@@ -1,75 +1,66 @@
 {
   "dataTop": [
     {
-      "title": "Organisation",
+      "title": "Organizacion",
       "links": [
         {
           "href": "/",
-          "name": "Startseite"
+          "name": "Casa"
         },
         {
-          "href": "/",
-          "name": "Rev Dev"
+          "href": "https://revdev.rev.earth",
+          "name": "Rev Dev",
+          "outside": true
         },
         {
-          "href": "/",
-          "name": "Rev Erde Gruppe"
+          "href": "/group",
+          "name": "Rev Earth Grupo"
         },
         {
-          "href": "/",
-          "name": "Kontaktiere uns"
+          "href": "/contact-us",
+          "name": "Contactactanos"
         }
       ]
     },
     {
-      "title": "Ideen",
+      "title": "Ideas",
       "links": [
         {
-          "href": "/",
-          "name": "Ideen"
+          "href": "/ideas",
+          "name": "Ideas"
         }
       ]
     },
     {
-      "title": "Sozialen Medien",
+      "title": "Socila Media",
       "links": [
         {
-          "href": "/",
-          "name": "Facebook"
+          "href": "https://facebook.com/rev.earth",
+          "name": "Facebook",
+          "outside": true
         },
         {
-          "href": "/",
-          "name": "Instagram"
-        },
-        {
-          "href": "/",
-          "name": "Twitter"
-        },
-        {
-          "href": "/",
-          "name": "Linkedin"
-        },
-        {
-          "href": "/",
-          "name": "Youtube"
+          "href": "https://instagram.com/rev.earth",
+          "name": "Instagram",
+          "outside": true
         }
       ]
     }
   ],
   "dataBottom": {
-    "copy": "© Rev Erde 2020",
+    "copy": "© Rev Earth 2020",
     "links": [
       {
-        "href": "/",
-        "name": "Datenschutz-Bestimmungen"
+        "href": "/privacy-policy",
+        "name": "Política de privacidad"
       },
       {
-        "href": "/",
-        "name": "Geschäftsbedingungen"
+        "href": "/terms-and-conditions",
+        "name": "Terminos y condiciones"
       },
       {
-        "href": "/",
-        "name": "Cookie-Richtlinie"
+        "href": "/cookies-policy",
+        "name": "Politica de cookies"
       }
     ]
   }
