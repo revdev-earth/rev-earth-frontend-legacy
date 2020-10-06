@@ -42,7 +42,7 @@ const Input = styled.input`
 
   &:checked {
     /* background-image: url(https://i.postimg.cc/Hn0nstVK/Screenshot-2020-04-16-at-1-07-19-PM.png); */
-    bacground: transparent;
+    background: transparent;
     transition: background-image 0.9s;
   }
 

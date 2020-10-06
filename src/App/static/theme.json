@@ -8,7 +8,7 @@
       "text": "#333333",
       "link": {
         "default": "#001e50",
-        "hover": "green"
+        "hover": "#11998e"
       },
       "background": "#ffffff"
     }
@@ -19,10 +19,10 @@
       "secondary": "",
       "black": "#333333",
       "white": "#ffffffdd",
-      "text": "#ffffffdd",
+      "text": "#eeeeee",
       "link": {
         "default": "#ffffffdd",
-        "hover": "#cdcdcd"
+        "hover": "#11998e"
       },
       "background": "#000000"
     }

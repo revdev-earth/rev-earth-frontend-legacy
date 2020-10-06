@@ -75,7 +75,6 @@ const ContainerText = styled.div`
   opacity: 1;
   transition: opacity 0.3s cubic-bezier(0.14, 1.12, 0.67, 0.99) 0.1s, height 0.3s ease-in 0s;
   pointer-events: all;
-  color: white;
   margin-left: calc((100vw / 24) * 2);
   margin-right: calc((100vw / 24) * 2);
 

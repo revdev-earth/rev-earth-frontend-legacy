@@ -18,5 +18,4 @@ export default function Group(props) {
 
 const Container = styled.div`
   padding: 4rem;
-  color: #999999;
 `

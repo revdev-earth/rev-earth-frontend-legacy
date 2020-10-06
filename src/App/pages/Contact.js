@@ -56,7 +56,6 @@ const Input = styled.input`
   border-bottom: 2px solid #9b9b9b;
   outline: 0;
   font-size: 1.3rem;
-  color: #999999;
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
@@ -78,7 +77,7 @@ const Input = styled.input`
       display: block;
       transition: 0.2s;
       font-size: 1rem;
-      color: #11998e;
+      color: ${({ theme }) => theme?.colors?.link?.hover};
       font-weight: 700;
     }
     padding-bottom: 6px;
@@ -101,7 +100,6 @@ const TextArea = styled.textarea`
   border-bottom: 2px solid #9b9b9b;
   outline: 0;
   font-size: 1.3rem;
-  color: #999999;
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
@@ -125,7 +123,7 @@ const TextArea = styled.textarea`
       display: block;
       transition: 0.2s;
       font-size: 1rem;
-      color: #11998e;
+      color: ${({ theme }) => theme?.colors?.link?.hover};
       font-weight: 700;
     }
     padding-bottom: 6px;
@@ -147,7 +145,6 @@ const Label = styled.label`
   display: block;
   transition: 0.2s;
   font-size: 1rem;
-  color: #9b9b9b;
 `
 
 const Button = styled.button`
@@ -159,10 +156,10 @@ const Button = styled.button`
   display: block;
   cursor: pointer;
   transition: all ease 0.2s;
-  color: #999999;
+  color: inherit;
 
   &:hover {
-    border-color: #11998e;
-    color: #11998e;
+    border-color: ${({ theme }) => theme?.colors?.link?.hover};
+    color: ${({ theme }) => theme?.colors?.link?.hover};
   }
 `

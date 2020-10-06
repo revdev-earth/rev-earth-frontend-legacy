@@ -40,9 +40,7 @@ const Core = () => {
   const {
     context: { lenguage }
   } = useContext(Context)
-
   const data = useGetData(lenguage)
-
   return (
     <>
       <Header />
@@ -56,7 +54,7 @@ const Core = () => {
 
 const HelmetComponent = () => {
   const {
-    context: { lenguage }
+    context: { lenguage, theme }
   } = useContext(Context)
 
   return (
@@ -64,10 +62,10 @@ const HelmetComponent = () => {
       {/* html attributes */}
       <html lang={lenguage} amp />
       {/* body attributes */}
-      <body className='root' />
+      <body className={`root ${theme}`} />
       <meta charSet='utf-8' />
       {/* title attributes and value */}
-      <title itemProp='name' lang={`en`}>
+      <title itemProp='name' lang={lenguage}>
         {`Rev Earth`}
       </title>
       {/* noscript elements */}
@@ -77,7 +75,16 @@ const HelmetComponent = () => {
 }
 
 const Body = styled.div`
-  background-color: ${({ theme }) => theme?.colors?.background};
+  color: ${({ theme }) => theme?.colors?.text};
+
+  a {
+    color: ${({ theme }) => theme?.colors?.link?.default};
+
+    &:hover,
+    &:active {
+      color: ${({ theme }) => theme?.colors?.link?.hover};
+    }
+  }
 `
 
 export default App
