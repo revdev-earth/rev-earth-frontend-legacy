@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default function Group() {
+export default function Cookies() {
   // const {
   //   data: { home: data }
   // } = props
 
-  return <Container>Aqui es donde va Group</Container>
+  return <Container>Aqui es donde va cookies</Container>
 }
 
 const Container = styled.div``

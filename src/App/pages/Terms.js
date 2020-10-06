@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export default function Group() {
+export default function Terms() {
   // const {
   //   data: { home: data }
   // } = props

@@ -1,6 +1,12 @@
 import React from 'react'
-import Content from '../components/Content'
+import styled from 'styled-components'
 
 export default function Ideas() {
-  return <Content />
+  // const {
+  //   data: { home: data }
+  // } = props
+
+  return <Container>Aqui es donde va Group</Container>
 }
+
+const Container = styled.div``

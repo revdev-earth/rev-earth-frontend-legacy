@@ -2,8 +2,11 @@ import React from 'react'
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components'
 
-export default function NoMatch() {
+export default function NoMatch(props) {
   let location = useLocation()
+
+  // eslint-disable-next-line no-unused-vars
+  const { data } = props
 
   return (
     <Container>
