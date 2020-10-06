@@ -2,7 +2,7 @@ import {} from 'react'
 
 export default function useGetData(lenguage = 'es') {
   let data = {}
-  const files = ['home', 'cookies', 'footer', 'home', 'ideas', 'privacy', 'terms']
+  const files = ['home', 'cookies', 'footer', 'home', 'ideas', 'group', 'privacy', 'terms']
 
   files.forEach((section, i) => {
     try {
