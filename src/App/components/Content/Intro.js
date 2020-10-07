@@ -80,6 +80,7 @@ const ContainerText = styled.div`
 
   h2 {
     font-size: 3rem;
+    color: #eeeeee;
   }
 
   @media (min-width: 560px) {
