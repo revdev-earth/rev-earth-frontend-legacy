@@ -1,6 +1,6 @@
 import React, { Suspense, useContext } from 'react'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
-import { BrowserRouter as Router } from 'react-router-dom'
+import { HashRouter as Router } from 'react-router-dom'
 import styled from 'styled-components'
 import { ContextProvider, Context } from './context'
 import initialContext from './utils/initialContext'
