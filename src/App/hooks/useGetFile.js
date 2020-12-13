@@ -1,11 +1,10 @@
-import { useContext } from 'react'
-import { Context } from '../context'
+import { useCtx } from '../context'
 
 // Hook
 export default function useGetFile(section) {
   const {
-    context: { lenguage }
-  } = useContext(Context)
+    state: { lenguage }
+  } = useCtx()
 
   const getFile = () => {
     try {

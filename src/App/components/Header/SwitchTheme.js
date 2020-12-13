@@ -1,13 +1,13 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import Switch from '../common/Switch'
-import { Context } from '../../context'
+import { useCtx } from '../../context'
 
 export default () => {
   const {
-    context: { theme },
+    state: { theme },
     dispatch
-  } = useContext(Context)
+  } = useCtx()
 
   const switchTheme = element => {
     let typeTheme = 'light'

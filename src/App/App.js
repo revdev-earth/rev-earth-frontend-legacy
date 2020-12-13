@@ -1,22 +1,20 @@
-import React, { Suspense, useContext } from 'react'
+import React, { Suspense } from 'react'
 import { Helmet, HelmetProvider } from 'react-helmet-async'
 import { HashRouter as Router } from 'react-router-dom'
 import styled from 'styled-components'
-import { ContextProvider, Context } from './context'
-import initialContext from './utils/initialContext'
+import { ContextProvider } from './context'
 import ThemeProvider from './context/theme'
 import Loader from './components/Loader'
 import useGetData from './hooks/useGetData'
+import { useCtx } from './context'
 
 import './css/App.css'
 import 'normalize.css'
 
 function App() {
-  const initial = initialContext()
-
   return (
     <HelmetProvider>
-      <ContextProvider initial={initial}>
+      <ContextProvider>
         <ThemeProvider>
           <Body className='Body'>
             <HelmetComponent />
@@ -38,8 +36,8 @@ const Footer = React.lazy(() => import('./components/Footer'))
 
 const Core = () => {
   const {
-    context: { lenguage }
-  } = useContext(Context)
+    state: { lenguage }
+  } = useCtx()
   const data = useGetData(lenguage)
   return (
     <>
@@ -54,8 +52,8 @@ const Core = () => {
 
 const HelmetComponent = () => {
   const {
-    context: { lenguage, theme }
-  } = useContext(Context)
+    state: { lenguage, theme }
+  } = useCtx()
 
   return (
     <Helmet>

@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ThemeProvider as Provider } from 'styled-components'
-import { Context } from '.'
+import { useCtx } from '.'
 
 /** Return './.theme.json' || {} */
 const getLocalTheme = theme => {
@@ -29,8 +29,8 @@ const ThemeProvider = ({ children }) => {
 
 const useTheme = () => {
   const {
-    context: { theme: themeContext }
-  } = useContext(Context)
+    state: { theme: themeContext }
+  } = useCtx()
 
   const [theme, setTheme] = useState({})
 
