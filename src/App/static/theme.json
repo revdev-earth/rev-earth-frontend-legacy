@@ -1,0 +1,30 @@
+{
+  "light": {
+    "colors": {
+      "primary": "#001e50",
+      "secondary": "",
+      "black": "#333333",
+      "white": "#ffffffdd",
+      "text": "#333333",
+      "link": {
+        "default": "#001e50",
+        "hover": "#11998e"
+      },
+      "background": "#ffffff"
+    }
+  },
+  "dark": {
+    "colors": {
+      "primary": "#ffffffdd",
+      "secondary": "",
+      "black": "#333333",
+      "white": "#ffffffdd",
+      "text": "#eeeeee",
+      "link": {
+        "default": "#ffffffdd",
+        "hover": "#11998e"
+      },
+      "background": "#000000"
+    }
+  }
+}
