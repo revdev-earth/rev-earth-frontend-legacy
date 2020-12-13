@@ -1,0 +1,8 @@
+export { default as Home } from './Home'
+export { default as Contact } from './Contact'
+export { default as Ideas } from './Ideas'
+export { default as Group } from './Group'
+export { default as Privacy } from './Privacy'
+export { default as Cookies } from './Cookies'
+export { default as Terms } from './Terms'
+export { default as NoMatch } from './NoMatch'
