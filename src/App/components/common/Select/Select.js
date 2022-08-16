@@ -34,7 +34,7 @@ export default props => {
     <DropDownContainer
       name={name}
       onClick={togglingPointerOver}
-      onPointerEnter={!isMobileDevice ? togglingPointerOver : () => {}}
+      // onPointerEnter={!isMobileDevice ? togglingPointerOver : () => {}}
       onPointerLeave={togglingPointerLeave}
       {...rest}>
       <DropDownHeader {...rest}>
