@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { isMobileDevice } from '../../../utils'
 
 // const options = ["Mangoes", "Apples", "Oranges"];
 
