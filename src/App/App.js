@@ -30,6 +30,7 @@ function App() {
   )
 }
 
+const Background = React.lazy(() => import('./components/Backgrund'))
 const Header = React.lazy(() => import('./components/Header'))
 const SwitchRoutes = React.lazy(() => import('./router'))
 const Footer = React.lazy(() => import('./components/Footer'))
@@ -39,8 +40,11 @@ const Core = () => {
     state: { lenguage }
   } = useCtx()
   const data = useGetData(lenguage)
+
   return (
     <>
+      <Background />
+
       <Header />
       {/* Aqui poner el rooter */}
       <SwitchRoutes data={data} />

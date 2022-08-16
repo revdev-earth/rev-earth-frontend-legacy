@@ -2,43 +2,60 @@ import React, { useEffect, useState } from 'react'
 import { ThemeProvider as Provider } from 'styled-components'
 import { useCtx } from '.'
 
+// Get local file theme to be used by provider
 /** Return './.theme.json' || {} */
-const getLocalTheme = theme => {
+const getLocalTheme = mode => {
   // switch into ligth or dark
-  let themeFile = {}
+  let themeJSON = {}
+
   try {
-    themeFile = require('../static/theme.json')
+    themeJSON = require('../static/theme.json')
   } catch (err) {
-    themeFile = {}
+    console.warn('No theme json in static.')
   }
 
-  switch (theme) {
+  let theme_mode
+
+  switch (mode) {
     case 'light':
-      return themeFile.light
+      theme_mode = themeJSON.light
+      break
     case 'dark':
-      return themeFile.dark
+      theme_mode = themeJSON.dark
+      break
     default:
-      return themeFile.light
+      theme_mode = themeJSON.light
+      break
+  }
+
+  return {
+    ...theme_mode,
+    mode
   }
 }
 
-const ThemeProvider = ({ children }) => {
-  const theme = useTheme()
-  return <Provider theme={theme || {}}>{children}</Provider>
-}
+// useTheme return theme
 
 const useTheme = () => {
   const {
-    state: { theme: themeContext }
+    state: { theme: theme_name }
   } = useCtx()
 
   const [theme, setTheme] = useState({})
 
   useEffect(() => {
-    setTheme(getLocalTheme(themeContext))
-  }, [themeContext])
+    setTheme(getLocalTheme(theme_name))
+  }, [theme_name])
 
   return theme
+}
+
+// Provider
+
+const ThemeProvider = ({ children }) => {
+  const theme = useTheme()
+  console.log('theme provider', theme)
+  return <Provider theme={theme}>{children}</Provider>
 }
 
 export default ThemeProvider

@@ -18,6 +18,10 @@ export const ContextProvider = ({ children }) => {
   const storage = Storage
   const [state, dispatch] = useReducer(reducer, initialState())
 
+  // state :
+  //  lenguage: string;
+  //  theme: string;
+
   // Update localStorage
   useEffect(() => {
     storage.update('context', state)

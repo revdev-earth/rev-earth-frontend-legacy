@@ -1,11 +1,11 @@
 {
   "dataTop": [
     {
-      "title": "Organizacion",
+      "title": "Organization",
       "links": [
         {
           "href": "/",
-          "name": "Casa"
+          "name": "Home"
         },
         {
           "href": "https://revdev.rev.earth",
@@ -14,11 +14,11 @@
         },
         {
           "href": "/group",
-          "name": "Rev Earth Grupo"
+          "name": "Rev Earth Grup"
         },
         {
           "href": "/contact-us",
-          "name": "Contactactanos"
+          "name": "Contact us"
         }
       ]
     },
@@ -32,7 +32,7 @@
       ]
     },
     {
-      "title": "Socila Media",
+      "title": "Social Media",
       "links": [
         {
           "href": "https://facebook.com/rev.earth",

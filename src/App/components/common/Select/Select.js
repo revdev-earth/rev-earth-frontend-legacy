@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { isMobileDevice } from '../../../utils'
 
 // const options = ["Mangoes", "Apples", "Oranges"];
 
@@ -19,6 +20,7 @@ export default props => {
   const togglingPointerLeave = () => close()
 
   const onHandleChangeOption = option => () => {
+    console.log('activalo papa')
     setSelectedOption(option)
     onChange && onChange(option)
   }
@@ -32,7 +34,7 @@ export default props => {
     <DropDownContainer
       name={name}
       onClick={togglingPointerOver}
-      onPointerEnter={togglingPointerOver}
+      onPointerEnter={!isMobileDevice ? togglingPointerOver : () => {}}
       onPointerLeave={togglingPointerLeave}
       {...rest}>
       <DropDownHeader {...rest}>
@@ -58,6 +60,7 @@ export default props => {
               return (
                 <ListItem
                   onClick={onHandleChangeOption(option)}
+                  onTouchStart={onHandleChangeOption(option)}
                   key={Math.random()}
                   isSelected={isSelected}>
                   {option.label}
@@ -104,6 +107,7 @@ const ContainerIcon = styled.div`
 
 const HeaderText = styled.div`
   padding: 0.5rem 1rem;
+  cursor: pointer;
 `
 
 const DropDownListContainer = styled.div`
@@ -125,7 +129,11 @@ const DropDownList = styled.ul`
   color: ${({ affterlimit, theme }) =>
     affterlimit ? theme?.colors?.primary : theme?.colors?.white};
   background: ${({ affterlimit, theme }) =>
-    affterlimit ? theme?.colors?.white : 'trasparent'};
+    theme.mode !== 'dark'
+      ? affterlimit
+        ? theme?.colors?.white
+        : 'trasparent'
+      : 'trasparent'};
   padding: 0.1rem;
   margin-top: 0.6rem;
   box-sizing: border-box;

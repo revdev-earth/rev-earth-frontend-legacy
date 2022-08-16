@@ -1,11 +1,17 @@
-import React, { useState, memo } from 'react'
+import React, { useState, memo, useEffect } from 'react'
 import styled from 'styled-components'
-import BoxLineComponent from './BoxLine'
 import { useScrollPosition } from '@n8tb1t/use-scroll-position'
+import { useLocation } from 'react-router-dom'
+
+import BoxLineComponent from './BoxLine'
 import Lenguage from '../Lenguage'
 import SwitchTheme from './SwitchTheme'
 
 const Header = memo(() => {
+  const location = useLocation()
+
+  const isRoot = location.pathname === '/'
+
   const [isScrolledDown, setIsScrolledDown] = useState(false)
   const [affterlimit, setaffterlimit] = useState(false)
 
@@ -14,8 +20,14 @@ const Header = memo(() => {
     window.innerHeight || 0
   )
 
+  useEffect(() => {
+    !isRoot && setaffterlimit(true)
+    isRoot && setaffterlimit(false)
+  }, [isRoot])
+
   useScrollPosition(
     ({ prevPos, currPos }) => {
+      if (!isRoot) return
       const Limit = (vh / 10) * 9
       const isDown = currPos.y < prevPos.y
       const execcedLimit = Math.abs(currPos.y) > Limit
@@ -23,11 +35,12 @@ const Header = memo(() => {
       if (isDown !== isScrolledDown) setIsScrolledDown(isDown)
       if (execcedLimit !== affterlimit) setaffterlimit(execcedLimit)
     },
-    [isScrolledDown],
+    [isScrolledDown, isRoot],
     false,
     false,
     300
   )
+
   return (
     <HeaderContainer>
       <Container affterlimit={affterlimit}>

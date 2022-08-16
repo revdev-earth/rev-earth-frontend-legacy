@@ -31,6 +31,7 @@ const Input = styled.input`
   outline: none;
   transition: background-image 0.9s;
   box-shadow: 0px 2px 5px 1px gray;
+  cursor: pointer;
 
   &:before {
     content: '';
