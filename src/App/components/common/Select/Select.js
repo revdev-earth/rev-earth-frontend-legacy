@@ -132,7 +132,7 @@ const DropDownList = styled.ul`
       ? affterlimit
         ? theme?.colors?.white
         : 'trasparent'
-      : 'trasparent'};
+      : theme?.colors?.black + '70'};
   padding: 0.1rem;
   margin-top: 0.6rem;
   box-sizing: border-box;
